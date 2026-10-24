@@ -1,0 +1,38 @@
+name: Deploy to IONOS
+on:
+  push:
+    branches:
+      - main
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Prepare website files
+        run: |
+          mkdir -p dist
+          # Copy all regular website files (excluding .git, .github, and hidden files)
+          find . -maxdepth 1 -type f ! -name ".*" -exec cp {} dist/ \;
+          # Also copy standard website asset directories if they exist
+          for dir in images img assets css js; do
+            [ -d "$dir" ] && cp -r "$dir" dist/ || true
+          done
+          echo "Files to upload:"
+          ls -la dist/
+
+      - name: Sync files via true SFTP
+        uses: wlixcc/SFTP-Deploy-Action@a5ccb9c6211a94cc59404f0fdb2a9936a6dfee64 # v1.2.6
+        with:
+          server: ${{ secrets.IONOS_HOST }}
+          username: ${{ secrets.IONOS_USERNAME }}
+          password: ${{ secrets.IONOS_PASSWORD }}
+          port: 22
+          local_path: './dist/*'
+          remote_path: '/public/6TO6/sparktacles/'
+          sftp_only: true
