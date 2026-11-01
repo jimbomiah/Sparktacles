@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparktacles — Backstage Pass to Sparkle</title>
+  <meta name="description" content="Sparktacles is boutique hand-bedazzled eyewear by artist Liza. Statement shades, custom spectacles, gemmed goggles and novelty frames — set by hand, one stone at a time. DM @sparktacles to claim or commission your pair.">
+  <meta name="theme-color" content="#FFF6E8">
+  <meta property="og:title" content="Sparktacles — Let your spectacles sparkle!">
+  <meta property="og:description" content="Hand-set rhinestone eyewear, one light-hearted pair at a time. Browse the setlist, grab a backstage pass, meet us at the lot.">
+  <meta property="og:image" content="assets/sparktacleslogo.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/jpeg" href="assets/sparktaclesicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Sofia&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}.ticket{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#setlist">Skip to the setlist</a>
+
+  <!-- subtle grain + confetti canvas -->
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header__inner">
+      <a class="brand" href="#hero" aria-label="Sparktacles — back to top">
+        <img class="brand__icon" src="assets/sparktaclesicon.jpg" alt="" width="40" height="40" loading="eager">
+        <span class="brand__word">Sparktacles</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="#setlist">The setlist</a>
+        <a class="nav__link" href="#backstage">Backstage</a>
+        <a class="nav__link" href="#crowd">The crowd</a>
+        <a class="nav__link" href="#tour">Tour dates</a>
+        <a class="nav__link" href="#liza">Liza</a>
+      </nav>
+      <a class="btn btn--small btn--gold" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">DM to claim</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Mobile">
+      <a href="#setlist" class="mobile-menu__link">The setlist</a>
+      <a href="#backstage" class="mobile-menu__link">Backstage</a>
+      <a href="#crowd" class="mobile-menu__link">The crowd</a>
+      <a href="#tour" class="mobile-menu__link">Tour dates</a>
+      <a href="#liza" class="mobile-menu__link">Liza</a>
+      <a href="https://ig.me/m/sparktacles" class="mobile-menu__link mobile-menu__link--cta" target="_blank" rel="noopener">DM to claim ✦</a>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- ================= Hero ================= -->
+    <section class="hero" id="hero">
+      <div class="bokeh" aria-hidden="true">
+        <i class="orb orb--gold" style="--d:0s;--s:1"></i>
+        <i class="orb orb--pink" style="--d:1.2s;--s:1.25"></i>
+        <i class="orb orb--blue" style="--d:2.1s;--s:.85"></i>
+        <i class="orb orb--purple" style="--d:.6s;--s:1.4"></i>
+        <i class="orb orb--pink orb--soft" style="--d:3s;--s:.7"></i>
+        <i class="orb orb--gold orb--pale" style="--d:1.8s;--s:1.15"></i>
+        <span class="tiny-star tiny-star--a" aria-hidden="true">✦</span>
+        <span class="tiny-star tiny-star--b" aria-hidden="true">✦</span>
+        <span class="tiny-star tiny-star--c" aria-hidden="true">✦</span>
+        <span class="tiny-star tiny-star--d" aria-hidden="true">✦</span>
+      </div>
+
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow hero__eyebrow reveal">Boutique hand-bedazzled eyewear · Sparktacles</p>
+          <h1 class="hero__title reveal">
+            Let your spectacles
+            <span class="hero__sparkle">sparkle!</span>
+          </h1>
+          <p class="hero__lede reveal">
+            Rhinestones, colour and pure good times — set by hand, one stone at a time, by artist <b>Liza</b>. Every pair is a one-of-one: once it's claimed in the DMs, it retires to somebody's face.
+          </p>
+          <div class="hero__cta reveal">
+            <a class="btn btn--ink" href="#setlist">Browse the setlist</a>
+            <a class="btn btn--outline" href="#backstage">Start a custom order</a>
+          </div>
+          <p class="hero__note reveal">First message claims the piece. Everything happens in the DMs — <a href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">@sparktacles</a></p>
+        </div>
+
+        <div class="hero__poster reveal" aria-label="The Sparktacles wordmark over a wash of stage lights">
+          <div class="poster-card">
+            <img src="assets/sparktacleslogo.jpg" alt="The Sparktacles wordmark over a bright bokeh of pink, purple, blue and gold lights" width="640" height="360" loading="eager">
+            <span class="sticker sticker--top" aria-hidden="true">hand-set ✦</span>
+            <span class="sticker sticker--side" aria-hidden="true">one of one</span>
+          </div>
+          <p class="hero__caption">The wordmark, captured mid-duvet-day — somewhere between a stage light and a love letter.</p>
+        </div>
+      </div>
+
+      <!-- setlist index strip -->
+      <div class="hero__index" aria-label="Collection index">
+        <a href="#tkt-leopard"><span class="idx__no">№ 01</span><span>Leopard</span></a>
+        <a href="#tkt-rainbow"><span class="idx__no">№ 02</span><span>Rainbow</span></a>
+        <a href="#tkt-oracle"><span class="idx__no">№ 03</span><span>Oracle</span></a>
+        <a href="#tkt-thirdeye"><span class="idx__no">№ 04</span><span>Third Eye</span></a>
+        <a href="#tkt-goggles"><span class="idx__no">№ 05</span><span>Goggles</span></a>
+        <a href="#tkt-heart"><span class="idx__no">№ 06</span><span>Heart</span></a>
+        <a class="idx__cta" href="#backstage"><span class="idx__no">+ 07</span><span>Your frames</span></a>
+      </div>
+    </section>
+
+    <!-- ================= Ticker ================= -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>hand-set sparkle</span><span class="dot">✦</span>
+        <span>one of one · never re-stocked</span><span class="dot">✦</span>
+        <span>first DM wins the pair</span><span class="dot">✦</span>
+        <span>send the frames, let's talk</span><span class="dot">✦</span>
+        <span>let your spectacles sparkle</span><span class="dot">✦</span>
+        <span>hand-set sparkle</span><span class="dot">✦</span>
+        <span>one of one · never re-stocked</span><span class="dot">✦</span>
+        <span>first DM wins the pair</span><span class="dot">✦</span>
+        <span>send the frames, let's talk</span><span class="dot">✦</span>
+        <span>let your spectacles sparkle</span><span class="dot">✦</span>
+      </div>
+    </div>
+
+    <!-- ================= Setlist ================= -->
+    <section class="section" id="setlist">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow reveal">Tonight's setlist</p>
+          <h2 class="section-title reveal">Six acts, front row,<br>all <span class="script">one of one</span></h2>
+          <p class="lede reveal">The current rotation. Every frame is set by hand, numbered, and never reproduced — see one you love and it's yours the second you DM <b>@sparktacles</b>. Filter the show however you like.</p>
+        </header>
+
+        <div class="filters reveal" role="group" aria-label="Filter the setlist">
+          <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All acts</button>
+          <button class="chip" type="button" data-filter="shades" aria-pressed="false">Shades</button>
+          <button class="chip" type="button" data-filter="spectacles" aria-pressed="false">Spectacles</button>
+          <button class="chip" type="button" data-filter="goggles" aria-pressed="false">Goggles</button>
+          <button class="chip" type="button" data-filter="novelty" aria-pressed="false">Novelty</button>
+        </div>
+        <p class="filters__count" id="filterCount" aria-live="polite">6 acts on the bill</p>
+
+        <div class="tickets" id="tickets">
+
+          <!-- Act 01 · Free Range Leopard -->
+          <article class="ticket ticket--gold" id="tkt-leopard" data-cat="shades">
+            <div class="ticket__meta">
+              <span class="ticket__no">ACT № 01</span>
+              <span class="ticket__cat">Shades</span>
+            </div>
+            <div class="ticket__art">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Free Range Leopard — oversized cat-eye sunglasses with honey and chocolate leopard-print rhinestones">
+                <defs>
+                  <radialGradient id="lp-lens" cx=".5" cy=".42" r=".75">
+                    <stop offset="0" stop-color="#c97b18"/>
+                    <stop offset="1" stop-color="#7a4308"/>
+                  </radialGradient>
+                  <filter id="lp-soft" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3"/>
+                  </filter>
+                </defs>
+                <circle cx="240" cy="196" r="150" fill="#ffe9b3" opacity=".6"/>
+                <ellipse cx="240" cy="352" rx="180" ry="20" fill="#ffd97a" opacity=".5"/>
+                <g id="lp-lens-g">
+                  <path d="M118 126 C164 108 232 112 254 136 C272 156 262 186 236 202 C202 222 156 220 130 196 C108 176 96 150 118 126 Z" fill="url(#lp-lens)"/>
+                  <g>
+                    <circle cx="152" cy="146" r="9" fill="#3a2410"/>
+                    <circle cx="196" cy="132" r="7" fill="#3a2410"/>
+                    <circle cx="226" cy="158" r="10" fill="#3a2410"/>
+                    <circle cx="170" cy="176" r="8" fill="#3a2410"/>
+                    <circle cx="136" cy="170" r="6" fill="#3a2410"/>
+                    <circle cx="210" cy="188" r="7" fill="#3a2410"/>
+                    <circle cx="182" cy="152" r="4" fill="#ffe6b8" opacity=".8"/>
+                    <circle cx="148" cy="132" r="2.6" fill="#fff" opacity=".9"/>
+                  </g>
+                  <path d="M118 126 C164 108 232 112 254 136 C272 156 262 186 236 202 C202 222 156 220 130 196 C108 176 96 150 118 126 Z" fill="none" stroke="#8a5a1a" stroke-width="9"/>
+                  <path d="M118 126 C164 108 232 112 254 136 C272 156 262 186 236 202 C202 222 156 220 130 196 C108 176 96 150 118 126 Z" fill="none" stroke="#ffd166" stroke-width="6.4" stroke-linecap="round" stroke-dasharray="0.1 20"/>
+                  <path d="M118 126 C164 108 232 112 254 136 C272 156 262 186 236 202 C202 222 156 220 130 196 C108 176 96 150 118 126 Z" fill="none" stroke="#fff6e0" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 20" stroke-dashoffset="10"/>
+                </g>
+                <use href="#lp-lens-g" transform="translate(480 0) scale(-1 1)"/>
+                <path d="M242 152 Q 252 168 258 150" fill="none" stroke="#8a5a1a" stroke-width="10" stroke-linecap="round"/>
+                <path d="M96 160 L58 138" stroke="#8a5a1a" stroke-width="9" stroke-linecap="round"/>
+                <path d="M384 160 L422 138" stroke="#8a5a1a" stroke-width="9" stroke-linecap="round"/>
+                <path class="tw" transform="translate(388 96) scale(.8)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#f5a623"/>
+                <path class="tw" style="animation-delay:1.1s" transform="translate(106 92) scale(.55)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ff5fa6"/>
+                <circle class="tw" style="animation-delay:.6s" cx="356" cy="272" r="3" fill="#ff5fa6"/>
+              </svg>
+            </div>
+            <div class="ticket__body">
+              <h3 class="ticket__name">Free Range Leopard</h3>
+              <p class="ticket__tag">Honey &amp; chocolate stones on an oversized cat-eye. Spotted twice at a lot, then never again.</p>
+            </div>
+            <div class="ticket__foot">
+              <span class="ticket__price">$85<span class="ticket__price-note">· one of one</span></span>
+              <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+            </div>
+          </article>
+
+          <!-- Act 02 · Sunday Rainbow -->
+          <article class="ticket ticket--pink" id="tkt-rainbow" data-cat="shades">
+            <div class="ticket__meta">
+              <span class="ticket__no">ACT № 02</span>
+              <span class="ticket__cat">Shades</span>
+            </div>
+            <div class="ticket__art">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Sunday Rainbow — oversized round sunglasses with a triple rainbow rhinestone rim">
+                <defs>
+                  <radialGradient id="rb-lens" cx=".5" cy=".45" r=".8">
+                    <stop offset="0" stop-color="#4a2a7a"/>
+                    <stop offset="1" stop-color="#251347"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="240" cy="196" r="150" fill="#ffe0ee" opacity=".8"/>
+                <ellipse cx="240" cy="352" rx="180" ry="20" fill="#ffb7d8" opacity=".45"/>
+                <g id="rb-lens-g">
+                  <circle cx="170" cy="190" r="64" fill="url(#rb-lens)"/>
+                  <circle cx="170" cy="190" r="68" fill="none" stroke="#ff5fa6" stroke-width="9" stroke-linecap="round" stroke-dasharray="0.1 24"/>
+                  <circle cx="170" cy="190" r="68" fill="none" stroke="#ffbe2e" stroke-width="9" stroke-linecap="round" stroke-dasharray="0.1 24" stroke-dashoffset="12"/>
+                  <circle cx="170" cy="190" r="68" fill="none" stroke="#2ecbff" stroke-width="9" stroke-linecap="round" stroke-dasharray="0.1 24" stroke-dashoffset="24"/>
+                  <circle cx="148" cy="168" r="12" fill="#fff" opacity=".14"/>
+                  <circle cx="140" cy="162" r="4" fill="#fff" opacity=".9"/>
+                </g>
+                <use href="#rb-lens-g" transform="translate(480 0) scale(-1 1)"/>
+                <path d="M230 172 Q 240 160 250 172" fill="none" stroke="#59207e" stroke-width="9" stroke-linecap="round"/>
+                <path d="M108 184 L70 160" stroke="#59207e" stroke-width="9" stroke-linecap="round"/>
+                <path d="M372 184 L410 160" stroke="#59207e" stroke-width="9" stroke-linecap="round"/>
+                <path class="tw" transform="translate(386 118) scale(.75)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#2ecbff"/>
+                <path class="tw" style="animation-delay:1.4s" transform="translate(112 96) scale(.6)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffbe2e"/>
+              </svg>
+            </div>
+            <div class="ticket__body">
+              <h3 class="ticket__name">Sunday Rainbow</h3>
+              <p class="ticket__tag">Oversized rounds with a triple rainbow rim — pink, gold, blue, same order every time.</p>
+            </div>
+            <div class="ticket__foot">
+              <span class="ticket__price">$95<span class="ticket__price-note">· one of one</span></span>
+              <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+            </div>
+          </article>
+
+          <!-- Act 03 · Office Oracle -->
+          <article class="ticket ticket--lavender" id="tkt-oracle" data-cat="spectacles">
+            <div class="ticket__meta">
+              <span class="ticket__no">ACT № 03</span>
+              <span class="ticket__cat">Spectacles</span>
+            </div>
+            <div class="ticket__art">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Office Oracle — everyday prescription glasses with crystal white and pink rhinestone rims">
+                <defs>
+                  <linearGradient id="or-lens" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#a48be0" stop-opacity=".5"/>
+                    <stop offset="1" stop-color="#6a4fc0" stop-opacity=".62"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="240" cy="196" r="150" fill="#ece3ff" opacity=".85"/>
+                <ellipse cx="240" cy="352" rx="180" ry="20" fill="#d9c7ff" opacity=".5"/>
+                <g id="or-frame">
+                  <rect x="128" y="160" width="102" height="76" rx="30" fill="url(#or-lens)"/>
+                  <g>
+                    <rect x="128" y="160" width="102" height="76" rx="30" fill="none" stroke="#ffffff" stroke-width="8"/>
+                    <rect x="128" y="160" width="102" height="76" rx="30" fill="none" stroke="#ff5fa6" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 12"/>
+                    <rect x="128" y="160" width="102" height="76" rx="30" fill="none" stroke="#ffbe2e" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 12" stroke-dashoffset="6"/>
+                    <path d="M146 174 L168 166" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".5"/>
+                  </g>
+                </g>
+                <use href="#or-frame" transform="translate(480 0) scale(-1 1)"/>
+                <path d="M230 168 Q 240 158 250 168" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+                <path d="M122 176 L84 158" stroke="#b9a2ef" stroke-width="7" stroke-linecap="round"/>
+                <path d="M358 176 L396 158" stroke="#b9a2ef" stroke-width="7" stroke-linecap="round"/>
+                <path class="tw" transform="translate(392 120) scale(.6)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffffff"/>
+                <path class="tw" style="animation-delay:1.8s" transform="translate(102 100) scale(.5)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ff5fa6"/>
+              </svg>
+            </div>
+            <div class="ticket__body">
+              <h3 class="ticket__name">Office Oracle</h3>
+              <p class="ticket__tag">Your everyday prescriptions, crystal and pink. Yes — the board meeting sparkles.</p>
+            </div>
+            <div class="ticket__foot">
+              <span class="ticket__price">$115<span class="ticket__price-note">· one of one</span></span>
+              <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+            </div>
+          </article>
+
+          <!-- Act 04 · Eyes Above -->
+          <article class="ticket ticket--blue" id="tkt-thirdeye" data-cat="novelty">
+            <div class="ticket__meta">
+              <span class="ticket__no">ACT № 04</span>
+              <span class="ticket__cat">Novelty</span>
+            </div>
+            <div class="ticket__art">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Eyes Above — novelty third-eye sunglasses with gold and violet rhinestones">
+                <defs>
+                  <radialGradient id="te-glass" cx=".5" cy=".45" r=".8">
+                    <stop offset="0" stop-color="#6a4fc0"/>
+                    <stop offset="1" stop-color="#2d1a5e"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="240" cy="196" r="150" fill="#dff3ff" opacity=".9"/>
+                <ellipse cx="240" cy="352" rx="180" ry="20" fill="#b7e6ff" opacity=".55"/>
+                <g id="te-lens">
+                  <circle cx="156" cy="242" r="54" fill="url(#te-glass)"/>
+                  <circle cx="156" cy="242" r="59" fill="none" stroke="#ffbe2e" stroke-width="8" stroke-linecap="round" stroke-dasharray="0.1 19"/>
+                  <circle cx="156" cy="242" r="59" fill="none" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round" stroke-dasharray="0.1 19" stroke-dashoffset="9.5"/>
+                  <circle cx="140" cy="226" r="4" fill="#fff" opacity=".9"/>
+                </g>
+                <use href="#te-lens" transform="translate(480 0) scale(-1 1)"/>
+                <circle cx="240" cy="158" r="26" fill="#2d1a5e" stroke="#241741" stroke-width="7"/>
+                <circle cx="240" cy="158" r="26" fill="none" stroke="#ffbe2e" stroke-width="6" stroke-linecap="round" stroke-dasharray="0.1 12"/>
+                <circle cx="240" cy="158" r="10" fill="#ffbe2e"/>
+                <circle cx="243" cy="155" r="3" fill="#fff" opacity=".9"/>
+                <path d="M206 118 L274 118" stroke="#8b5cf6" stroke-width="11" stroke-linecap="round"/>
+                <path d="M206 222 Q 240 174 274 222" fill="none" stroke="#8b5cf6" stroke-width="9" stroke-linecap="round"/>
+                <path d="M104 228 L64 204" stroke="#8b5cf6" stroke-width="9" stroke-linecap="round"/>
+                <path d="M376 228 L416 204" stroke="#8b5cf6" stroke-width="9" stroke-linecap="round"/>
+                <path class="tw" transform="translate(392 112) scale(.7)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffbe2e"/>
+                <path class="tw" style="animation-delay:1.3s" transform="translate(116 92) scale(.55)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#8b5cf6"/>
+              </svg>
+            </div>
+            <div class="ticket__body">
+              <h3 class="ticket__name">Eyes Above</h3>
+              <p class="ticket__tag">Gold and violet third-eye frame. Sees everything, judges nothing, starts conversations.</p>
+            </div>
+            <div class="ticket__foot">
+              <span class="ticket__price">$78<span class="ticket__price-note">· one of one</span></span>
+              <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+            </div>
+          </article>
+
+          <!-- Act 05 · Lift Line Legend -->
+          <article class="ticket ticket--mint" id="tkt-goggles" data-cat="goggles">
+            <div class="ticket__meta">
+              <span class="ticket__no">ACT № 05</span>
+              <span class="ticket__cat">Goggles</span>
+            </div>
+            <div class="ticket__art">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Lift Line Legend — gem-covered ski goggles with a blue all-seeing eye">
+                <circle cx="240" cy="196" r="150" fill="#dff7ec" opacity=".9"/>
+                <ellipse cx="240" cy="352" rx="180" ry="20" fill="#b8ebd4" opacity=".55"/>
+                <path d="M46 190 L76 176" stroke="#7c5cbf" stroke-width="10" stroke-linecap="round"/>
+                <path d="M434 190 L404 176" stroke="#7c5cbf" stroke-width="10" stroke-linecap="round"/>
+                <path d="M88 150 C84 118 100 106 128 104 C170 100 310 100 352 104 C380 106 396 118 392 150 C388 184 366 204 322 206 C298 207 182 207 158 206 C114 204 92 184 88 150 Z" fill="#5f4aa8" stroke="#7c5cbf" stroke-width="10"/>
+                <path d="M88 150 C84 118 100 106 128 104 C170 100 310 100 352 104 C380 106 396 118 392 150 C388 184 366 204 322 206 C298 207 182 207 158 206 C114 204 92 184 88 150 Z" fill="none" stroke="#2ecbff" stroke-width="6" stroke-linecap="round" stroke-dasharray="0.1 17"/>
+                <path d="M88 150 C84 118 100 106 128 104 C170 100 310 100 352 104 C380 106 396 118 392 150 C388 184 366 204 322 206 C298 207 182 207 158 206 C114 204 92 184 88 150 Z" fill="none" stroke="#ffbe2e" stroke-width="6" stroke-linecap="round" stroke-dasharray="0.1 17" stroke-dashoffset="8.5"/>
+                <g>
+                  <path d="M204 128 Q 198 104 186 92" stroke="#2ecbff" stroke-width="5" stroke-linecap="round" fill="none"/>
+                  <path d="M226 122 Q 224 98 216 82" stroke="#2ecbff" stroke-width="5" stroke-linecap="round" fill="none"/>
+                  <path d="M248 122 Q 252 98 248 84" stroke="#2ecbff" stroke-width="5" stroke-linecap="round" fill="none"/>
+                  <circle cx="186" cy="90" r="3.4" fill="#ffbe2e"/>
+                  <circle cx="216" cy="80" r="3.4" fill="#ffbe2e"/>
+                  <circle cx="248" cy="82" r="3.4" fill="#ffbe2e"/>
+                </g>
+                <g>
+                  <ellipse cx="240" cy="160" rx="56" ry="40" fill="#8b5cf6"/>
+                  <circle cx="240" cy="160" r="18" fill="#2ecbff"/>
+                  <circle cx="240" cy="160" r="8.5" fill="#241741"/>
+                  <circle cx="245" cy="155" r="4" fill="#fff" opacity=".9"/>
+                  <path d="M200 168 Q 208 188 224 192" stroke="#c9b4ff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                  <path d="M284 168 Q 276 188 260 192" stroke="#c9b4ff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                </g>
+                <path class="tw" transform="translate(386 116) scale(.7)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#2ecbff"/>
+                <path class="tw" style="animation-delay:1.5s" transform="translate(120 112) scale(.6)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffbe2e"/>
+              </svg>
+            </div>
+            <div class="ticket__body">
+              <h3 class="ticket__name">Lift Line Legend</h3>
+              <p class="ticket__tag">Fully gemmed goggles with an all-seeing eye. The whole lift line will ask before the chair tops out.</p>
+            </div>
+            <div class="ticket__foot">
+              <span class="ticket__price">$145<span class="ticket__price-note">· one of one</span></span>
+              <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+            </div>
+          </article>
+
+          <!-- Act 06 · Heart of Gold -->
+          <article class="ticket ticket--peach" id="tkt-heart" data-cat="shades">
+            <div class="ticket__meta">
+              <span class="ticket__no">ACT № 06</span>
+              <span class="ticket__cat">Shades</span>
+            </div>
+            <div class="ticket__art">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Heart of Gold — heart-shaped sunglasses dipped in pink and gold rhinestones">
+                <defs>
+                  <clipPath id="ht-clip"><path d="M0 0 C -36 -50, -96 -38, -96 6 C -96 48, -56 80, 0 108 C 56 80, 96 48, 96 6 C 96 -38, 36 -50, 0 0 Z"/></clipPath>
+                </defs>
+                <circle cx="240" cy="196" r="150" fill="#ffe6d6" opacity=".85"/>
+                <ellipse cx="240" cy="352" rx="180" ry="20" fill="#ffd0b0" opacity=".5"/>
+                <g id="ht-heart" transform="translate(178 306) scale(.66)">
+                  <path d="M0 0 C -36 -50, -96 -38, -96 6 C -96 48, -56 80, 0 108 C 56 80, 96 48, 96 6 C 96 -38, 36 -50, 0 0 Z" fill="#a1264f"/>
+                  <g clip-path="url(#ht-clip)">
+                    <circle cx="-40" cy="10" r="10" fill="#ff5fa6"/>
+                    <circle cx="30" cy="0" r="8" fill="#ff5fa6"/>
+                    <circle cx="-8" cy="46" r="9" fill="#ff5fa6"/>
+                    <circle cx="60" cy="34" r="9" fill="#ff5fa6"/>
+                    <circle cx="-70" cy="34" r="8" fill="#ff5fa6"/>
+                    <circle cx="0" cy="84" r="8" fill="#ff5fa6"/>
+                    <circle cx="-16" cy="-16" r="3.4" fill="#fff" opacity=".8"/>
+                  </g>
+                  <path d="M0 0 C -36 -50, -96 -38, -96 6 C -96 48, -56 80, 0 108 C 56 80, 96 48, 96 6 C 96 -38, 36 -50, 0 0 Z" fill="none" stroke="#ff5fa6" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 17"/>
+                  <path d="M0 0 C -36 -50, -96 -38, -96 6 C -96 48, -56 80, 0 108 C 56 80, 96 48, 96 6 C 96 -38, 36 -50, 0 0 Z" fill="none" stroke="#ffbe2e" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 17" stroke-dashoffset="8.5"/>
+                </g>
+                <use href="#ht-heart" transform="translate(480 0) scale(-1 1)"/>
+                <path d="M240 158 Q 240 178 240 188" fill="none" stroke="#8a2a52" stroke-width="9" stroke-linecap="round"/>
+                <path d="M112 218 L66 196" stroke="#8a2a52" stroke-width="9" stroke-linecap="round"/>
+                <path d="M368 218 L414 196" stroke="#8a2a52" stroke-width="9" stroke-linecap="round"/>
+                <path class="tw" transform="translate(390 122) scale(.65)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffbe2e"/>
+                <path class="tw" style="animation-delay:1.2s" transform="translate(104 116) scale(.5)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ff5fa6"/>
+              </svg>
+            </div>
+            <div class="ticket__body">
+              <h3 class="ticket__name">Heart of Gold</h3>
+              <p class="ticket__tag">Heart-shaped shades dipped in pink and gold. Wear your heart where everyone can see it.</p>
+            </div>
+            <div class="ticket__foot">
+              <span class="ticket__price">$88<span class="ticket__price-note">· one of one</span></span>
+              <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+            </div>
+          </article>
+
+          <!-- Act 07 · Your frames -->
+          <article class="ticket ticket--cream" id="tkt-custom" data-cat="custom">
+            <div class="ticket__meta">
+              <span class="ticket__no">ACT + 07</span>
+              <span class="ticket__cat">Backstage pass</span>
+            </div>
+            <div class="ticket__art">
+              <svg viewBox="0 0 480 400" role="img" aria-label="A ghosted frame outline waiting for your frames">
+                <circle cx="240" cy="196" r="150" fill="#fff3dd" opacity=".8"/>
+                <ellipse cx="240" cy="352" rx="180" ry="20" fill="#ffdfa8" opacity=".5"/>
+                <g transform="translate(240 216) scale(.72)" stroke="#b29363" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" fill="none" opacity=".8">
+                  <path d="M-128 -6 C-92 -28 -24 -24 2 -6 C28 -24 92 -28 128 -6 C148 8 138 44 110 62 C74 82 22 80 -2 62 C-30 80 -74 82 -110 62 C-138 44 -148 8 -128 -6 Z"/>
+                </g>
+                <path class="tw" transform="translate(240 208) scale(1)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffbe2e"/>
+                <circle class="tw" style="animation-delay:1s" cx="162" cy="180" r="2.4" fill="#ff5fa6"/>
+                <circle class="tw" style="animation-delay:2s" cx="318" cy="196" r="2" fill="#2ecbff"/>
+              </svg>
+            </div>
+            <div class="ticket__body">
+              <h3 class="ticket__name">Your frames — next act</h3>
+              <p class="ticket__tag">The stage is reserved. Send Liza your favourite pair and we'll build a one-of-one around them.</p>
+            </div>
+            <div class="ticket__foot">
+              <span class="ticket__price">From $60<span class="ticket__price-note">· custom</span></span>
+              <a class="claim claim--alt" href="#backstage">Start the commission →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Backstage (custom) ================= -->
+    <section class="section section--wash" id="backstage">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow reveal">Backstage pass</p>
+          <h2 class="section-title reveal">Send the frames,<br>let's <span class="script">talk</span></h2>
+          <p class="lede reveal">Have frames you adore but refuse to blend in? Ship them over. Four steps between here and your big reveal — with a real human at every single step.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__no">01</span>
+            <h3 class="step__name">The pitch</h3>
+            <p>DM <b>@sparktacles</b> with the dream — colours, patterns, chaos level. Liza sketches it and quotes it.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__no">02</span>
+            <h3 class="step__name">The handoff</h3>
+            <p>Box up your frames and send them in. No frames? No problem — she sources quality pairs to sparkle on.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__no">03</span>
+            <h3 class="step__name">In the workshop</h3>
+            <p>Every stone placed by hand, sealed, double-checked under lights. Usually with a live setlist playing.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__no">04</span>
+            <h3 class="step__name">The reveal</h3>
+            <p>They arrive in a Sparktacles pouch, one of one — for the lot, the slopes, or an especially heroic Tuesday.</p>
+          </li>
+        </ol>
+
+        <!-- DM composer -->
+        <div class="composer reveal">
+          <div class="composer__head">
+            <h3 class="composer__title">Draft the DM, get the sparkle</h3>
+            <p class="composer__sub">Answer like you're texting a friend — because you are. The draft writes itself.</p>
+          </div>
+
+          <div class="composer__body">
+            <fieldset class="group">
+              <legend class="group__label">What's the occasion?</legend>
+              <div class="picks" data-group="occasion">
+                <button class="pick is-selected" type="button" data-value="festival" aria-pressed="true">Festival season</button>
+                <button class="pick" type="button" data-value="wedding" aria-pressed="false">Wedding</button>
+                <button class="pick" type="button" data-value="everyday" aria-pressed="false">Everyday sparkle</button>
+                <button class="pick" type="button" data-value="slopes" aria-pressed="false">Ski day</button>
+                <button class="pick" type="button" data-value="because" aria-pressed="false">Just because</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="group">
+              <legend class="group__label">Where are we starting?</legend>
+              <div class="picks" data-group="origin">
+                <button class="pick is-selected" type="button" data-value="frames" aria-pressed="true">I have frames to send in</button>
+                <button class="pick" type="button" data-value="ready" aria-pressed="false">A ready-made pair has my name on it</button>
+                <button class="pick" type="button" data-value="surprise" aria-pressed="false">Surprise me entirely</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="group">
+              <legend class="group__label">Gem mood</legend>
+              <div class="picks" data-group="mood">
+                <button class="pick is-selected" type="button" data-value="rainbow" aria-pressed="true">Rainbow riot</button>
+                <button class="pick" type="button" data-value="gold" aria-pressed="false">Gold rush</button>
+                <button class="pick" type="button" data-value="pink" aria-pressed="false">Pink parade</button>
+                <button class="pick" type="button" data-value="blue" aria-pressed="false">Midnight blue</button>
+                <button class="pick" type="button" data-value="crystal" aria-pressed="false">Crystal clear</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="group">
+              <legend class="group__label">Budget vibe</legend>
+              <div class="picks" data-group="budget">
+                <button class="pick is-selected" type="button" data-value="chill" aria-pressed="true">Keep it chill (under $90)</button>
+                <button class="pick" type="button" data-value="sweet" aria-pressed="false">The sweet spot ($90–140)</button>
+                <button class="pick" type="button" data-value="allout" aria-pressed="false">Go all out</button>
+              </div>
+            </fieldset>
+
+            <div class="group">
+              <label class="group__label" for="story">Anything else I should know?</label>
+              <textarea class="story" id="story" rows="3" placeholder="e.g. they're my grandmother's frames — she'd never forgive me if they stayed boring…"></textarea>
+            </div>
+
+            <div class="composer__out" aria-live="polite">
+              <pre class="draft" id="draft"></pre>
+              <div class="composer__actions">
+                <button class="btn btn--ink" id="copyDraft" type="button">Copy the draft ✦</button>
+                <a class="btn btn--outline" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Open Instagram</a>
+                <span class="copied" id="copied" hidden>Copied — a little confetti, a big sparkle ✦</span>
+              </div>
+              <label class="sound-toggle">
+                <input type="checkbox" id="soundToggle" checked>
+                <span class="sound-toggle__track"><span class="sound-toggle__thumb"></span></span>
+                <span class="sound-toggle__label">mic-drop sounds</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= The Crowd ================= -->
+    <section class="section" id="crowd">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow reveal">Filed from the crowd</p>
+          <h2 class="section-title reveal">Verified <span class="script">sightings</span></h2>
+          <p class="lede reveal">Reports from festival lots, ski lifts, wedding dance floors and one very brave corner office. Tag <b>@sparktacles</b> to file your own.</p>
+        </header>
+
+        <div class="crowd">
+          <blockquote class="holler reveal">
+            <div class="holler__head"><span class="holler__loc">Saratoga, NY · lot</span><span class="holler__status">Status: glowing</span></div>
+            <p class="holler__quote">&ldquo;My Free Range Leopard pair got more attention than the opening act — and the opening act was good.&rdquo;</p>
+            <cite class="holler__who">— Maya R.</cite>
+          </blockquote>
+          <blockquote class="holler reveal">
+            <div class="holler__head"><span class="holler__loc">Burlington, VT · wedding</span><span class="holler__status">Status: tearful</span></div>
+            <p class="holler__quote">&ldquo;Liza turned my grandmother&rsquo;s old frames into treasure. I cried, then I sparkled, then I cried again.&rdquo;</p>
+            <cite class="holler__who">— Theo D.</cite>
+          </blockquote>
+          <blockquote class="holler reveal">
+            <div class="holler__head"><span class="holler__loc">Denver, CO · lift line</span><span class="holler__status">Status: blinding</span></div>
+            <p class="holler__quote">&ldquo;The goggles. THE GOGGLES. The entire lift line asked before the chair even reached the top.&rdquo;</p>
+            <cite class="holler__who">— Sam K.</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Tour ================= -->
+    <section class="section section--wash" id="tour">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow reveal">Tour dates</p>
+          <h2 class="section-title reveal">Meet us at <span class="script">the lot</span></h2>
+          <p class="lede reveal">The full display case travels. Try pieces on, talk gems with Liza, maybe leave a deposit. See the table — grab a friend, grab a visa.</p>
+        </header>
+
+        <div class="tour reveal">
+          <div class="tour__row">
+            <span class="tour__date"><b>Nov 14–16</b> <em>· 2026</em></span>
+            <span class="tour__event">PhanArt Fall Bazaar</span>
+            <span class="tour__city">Albany, NY</span>
+            <span class="tour__status tour__status--ok">Confirmed ✦</span>
+          </div>
+          <div class="tour__row">
+            <span class="tour__date"><b>Dec 06</b> <em>· 2026</em></span>
+            <span class="tour__event">Winter Sparkle Market</span>
+            <span class="tour__city">Burlington, VT</span>
+            <span class="tour__status tour__status--ok">Confirmed ✦</span>
+          </div>
+          <div class="tour__row">
+            <span class="tour__date"><b>Dec 20</b> <em>· 2026</em></span>
+            <span class="tour__event">Holiday Jam Bazaar</span>
+            <span class="tour__city">Brooklyn, NY</span>
+            <span class="tour__status tour__status--ok">Confirmed ✦</span>
+          </div>
+          <div class="tour__row">
+            <span class="tour__date"><b>Feb 12–15</b> <em>· 2027</em></span>
+            <span class="tour__event">Love Run Craft Fair</span>
+            <span class="tour__city">Philadelphia, PA</span>
+            <span class="tour__status tour__status--ok">Confirmed ✦</span>
+          </div>
+          <div class="tour__row">
+            <span class="tour__date"><b>Mar</b> <em>· 2027</em></span>
+            <span class="tour__event">PhanArt Riviera Maya</span>
+            <span class="tour__city">Cancún, MX</span>
+            <span class="tour__status tour__status--dm">DM for details</span>
+          </div>
+        </div>
+        <p class="tour__note reveal">Running a market, fest or swap? <a href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">DM Liza</a> — the case travels well.</p>
+      </div>
+    </section>
+
+    <!-- ================= Liza ================= -->
+    <section class="section" id="liza">
+      <div class="wrap about-grid">
+        <div class="about__copy reveal">
+          <p class="eyebrow">The artist</p>
+          <h2 class="section-title">The hands behind <span class="script">the shine</span></h2>
+          <p><b>Liza</b> — around the lot as <b>@hallyscomet</b> — started bedazzling frames for friends before shows and accidentally built a small empire of glitter. What began as one leopard-print pair is now a rotating collection of one-of-one spectacles, shades and goggles.</p>
+          <p>No factories, no catalogs, no repeats. Just a bench, a tray of stones, and the unshakeable belief that Tuesday is a perfectly good day to look like the encore.</p>
+          <div class="about__stats">
+            <div class="stat"><span class="stat__n">100%</span><span class="stat__l">hand-set stones</span></div>
+            <div class="stat"><span class="stat__n">01</span><span class="stat__l">of every pair</span></div>
+            <div class="stat"><span class="stat__n">∞</span><span class="stat__l">sparkle mileage</span></div>
+          </div>
+        </div>
+        <figure class="about__card reveal">
+          <img src="assets/sparktaclesicon.jpg" alt="The Sparktacles icon — a lavender square with a looping white S and two gold sparkles" width="240" height="240" loading="lazy">
+          <figcaption>the icon, obviously ✦</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <p class="footer__kicker">Thanks for stopping by</p>
+    <p class="footer__word" aria-hidden="true">Sparktacles</p>
+    <p class="footer__line">Let your spectacles <span class="footer__spell">sparkle!</span></p>
+    <div class="footer__social">
+      <a class="btn btn--small btn--outline" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">DM @sparktacles</a>
+      <a class="btn btn--small btn--outline" href="https://instagram.com/sparktacles" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <p class="footer__fine">
+      Hand-set sparkle, one pair at a time · <span class="footer__star">✦</span> · every piece one of one
+    </p>
+    <a class="footer__top" href="#top">Back to top ↑</a>
+  </footer>
+
+  <a class="dm-pill" id="dmPill" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">✦ Claim in the DMs</a>
+
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' preserveAspectRatio='xMidYMid slice' role='img' aria-label=''>
+  <defs>
+    <filter id='soft' x='-80%' y='-80%' width='260%' height='260%'><feGaussianBlur stdDeviation='16'/></filter>
+    <filter id='mini' x='-80%' y='-80%' width='260%' height='260%'><feGaussianBlur stdDeviation='5'/></filter>
+    <radialGradient id='vig' cx='50%' cy='34%' r='78%'>
+      <stop offset='55%' stop-color='#140F23' stop-opacity='0'/>
+      <stop offset='100%' stop-color='#140F23' stop-opacity='0.92'/>
+    </radialGradient>
+    <linearGradient id='fade' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='55%' stop-color='#140F23' stop-opacity='0'/>
+      <stop offset='100%' stop-color='#140F23' stop-opacity='1'/>
+    </linearGradient>
+  </defs>
+  <rect width='1600' height='900' fill='#150F28'/>
+  <circle cx='180' cy='180' r='120' fill='#9D6BFB' opacity='0.34' filter='url(#soft)'/>
+  <circle cx='520' cy='120' r='90' fill='#FF7AC3' opacity='0.3' filter='url(#soft)'/>
+  <circle cx='900' cy='220' r='130' fill='#5BC7F0' opacity='0.26' filter='url(#soft)'/>
+  <circle cx='1290' cy='160' r='110' fill='#FFC93C' opacity='0.26' filter='url(#soft)'/>
+  <circle cx='1480' cy='320' r='140' fill='#E0479E' opacity='0.3' filter='url(#soft)'/>
+  <circle cx='360' cy='420' r='150' fill='#6D4AE0' opacity='0.34' filter='url(#soft)'/>
+  <circle cx='1100' cy='460' r='160' fill='#6D4AE0' opacity='0.3' filter='url(#soft)'/>
+  <circle cx='700' cy='540' r='120' fill='#FF7AC3' opacity='0.22' filter='url(#soft)'/>
+  <circle cx='60' cy='620' r='130' fill='#5BC7F0' opacity='0.24' filter='url(#soft)'/>
+  <circle cx='1520' cy='640' r='120' fill='#9D6BFB' opacity='0.3' filter='url(#soft)'/>
+  <circle cx='980' cy='760' r='140' fill='#FFC93C' opacity='0.18' filter='url(#soft)'/>
+  <circle cx='300' cy='240' r='26' fill='#FFC93C' opacity='0.8' filter='url(#mini)'/>
+  <circle cx='760' cy='160' r='20' fill='#FF7AC3' opacity='0.85' filter='url(#mini)'/>
+  <circle cx='1240' cy='300' r='24' fill='#9D6BFB' opacity='0.8' filter='url(#mini)'/>
+  <circle cx='1420' cy='520' r='20' fill='#5BC7F0' opacity='0.8' filter='url(#mini)'/>
+  <circle cx='540' cy='560' r='22' fill='#FFC93C' opacity='0.7' filter='url(#mini)'/>
+  <circle cx='960' cy='420' r='18' fill='#FFFFFF' opacity='0.5' filter='url(#mini)'/>
+  <circle cx='180' cy='480' r='20' fill='#FF7AC3' opacity='0.7' filter='url(#mini)'/>
+  <circle cx='1340' cy='700' r='22' fill='#FFC93C' opacity='0.6' filter='url(#mini)'/>
+  <polygon points='240,126 243.4,136.6 254,140 243.4,143.4 240,154 236.6,143.4 226,140 236.6,136.6' fill='#FFC93C' opacity='0.9'/>
+  <polygon points='1180,230 1182.4,237.6 1190,240 1182.4,242.4 1180,250 1177.6,242.4 1170,240 1177.6,237.6' fill='#FFFFFF' opacity='0.7'/>
+  <polygon points='620,628 622.9,637.1 632,640 622.9,642.9 620,652 617.1,642.9 608,640 617.1,637.1' fill='#FFC93C' opacity='0.55'/>
+  <polygon points='1420,130 1422.4,137.6 1430,140 1422.4,142.4 1420,150 1417.6,142.4 1410,140 1417.6,137.6' fill='#FF7AC3' opacity='0.7'/>
+  <rect width='1600' height='900' fill='url(#vig)'/>
+  <rect width='1600' height='900' fill='url(#fade)'/>
+</svg>

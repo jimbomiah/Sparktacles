@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparktacles — Let Your Spectacles Sparkle!</title>
+  <meta name="description" content="Hand-bedazzled eyewear by Liza: rhinestone-covered sunglasses, spectacles, goggles & custom orders. One-of-one pieces for the festival soul. DM @sparktacles to shop.">
+  <meta name="theme-color" content="#0d0618">
+  <meta property="og:title" content="Sparktacles — Let Your Spectacles Sparkle!">
+  <meta property="og:description" content="Hand-bedazzled eyewear, custom orders & one-of-one sparkle. DM @sparktacles.">
+  <meta property="og:image" content="sparktaclesicon.jpg">
+  <link rel="icon" type="image/jpeg" href="sparktaclesicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <noscript><style>.preloader { display: none; }</style></noscript>
+</head>
+<body>
+
+  <a class="skip-link" href="#gallery">Skip to the gallery</a>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <img src="sparktaclesicon.jpg" alt="" class="preloader__icon" width="72" height="72">
+      <p class="preloader__text">loading the sparkle<span class="preloader__dots">…</span></p>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="top">
+    <div class="header__inner">
+      <a href="#top" class="header__logo" data-hover aria-label="Sparktacles — home">
+        <img src="sparktaclesicon.jpg" alt="" class="header__icon" width="40" height="40">
+        <span class="header__wordmark">Sparktacles</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#gallery" class="nav__link" data-hover>Gallery</a>
+        <a href="#custom" class="nav__link" data-hover>Custom</a>
+        <a href="#fame" class="nav__link" data-hover>Wall of Fame</a>
+        <a href="#events" class="nav__link" data-hover>Events</a>
+        <a href="https://instagram.com/sparktacles" class="btn btn--small magnetic" target="_blank" rel="noopener" data-hover>
+          <span class="magnetic__inner">DM @sparktacles</span>
+        </a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobilemenu" id="mobilemenu" aria-hidden="true">
+    <nav class="mobilemenu__nav" aria-label="Mobile">
+      <a href="#gallery" class="mobilemenu__link">Gallery</a>
+      <a href="#custom" class="mobilemenu__link">Custom Orders</a>
+      <a href="#fame" class="mobilemenu__link">Wall of Fame</a>
+      <a href="#events" class="mobilemenu__link">Events</a>
+      <a href="https://instagram.com/sparktacles" class="mobilemenu__link mobilemenu__link--cta" target="_blank" rel="noopener">@sparktacles</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" aria-label="Welcome">
+      <canvas class="hero__bokeh" id="bokeh" aria-hidden="true"></canvas>
+      <div class="hero__vignette" aria-hidden="true"></div>
+      <div class="hero__content" id="heroContent">
+        <p class="hero__eyebrow">hand-bedazzled eyewear &middot; one of one</p>
+        <h1 class="hero__title" id="heroTitle">Sparktacles</h1>
+        <p class="hero__tagline">Let your spectacles sparkle!</p>
+        <p class="hero__sub">Rhinestone-covered sunnies, specs &amp; goggles, made by hand in small sparkly batches &mdash; or send me your frames and I&rsquo;ll turn them into treasure.</p>
+        <div class="hero__cta">
+          <a href="#gallery" class="btn btn--primary magnetic" data-hover><span class="magnetic__inner">Shop ready-to-wear</span></a>
+          <a href="#custom" class="btn btn--ghost magnetic" data-hover><span class="magnetic__inner">Start a custom order</span></a>
+        </div>
+      </div>
+      <a href="#gallery" class="hero__scroll" aria-label="Scroll to gallery">
+        <span>scroll for sparkle</span>
+        <svg viewBox="0 0 36 36" class="star star--gold" aria-hidden="true"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+      </a>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__group">
+          <span>let your spectacles sparkle</span>
+          <svg viewBox="0 0 36 36" class="star"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+          <span>one of one &middot; made by hand</span>
+          <svg viewBox="0 0 36 36" class="star"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+          <span>send me your frames</span>
+          <svg viewBox="0 0 36 36" class="star"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+        </span>
+        <span class="marquee__group">
+          <span>let your spectacles sparkle</span>
+          <svg viewBox="0 0 36 36" class="star"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+          <span>one of one &middot; made by hand</span>
+          <svg viewBox="0 0 36 36" class="star"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+          <span>send me your frames</span>
+          <svg viewBox="0 0 36 36" class="star"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about section" id="about">
+      <div class="wrap about__grid">
+        <div class="about__copy" data-reveal>
+          <h2 class="title title--script">Meet the sparkle dealer</h2>
+          <p>Hi, I&rsquo;m <strong>Liza</strong> &mdash; artist, gem collector, and the hands behind every single rhinestone. What started as bejeweling my own glasses for shows turned into <em>Sparktacles</em>: wearable art for people who like their eyewear loud, joyful, and impossible to lose in a crowd.</p>
+          <p>Every piece is one-of-one, hand-placed gem by gem, and regularly spotted glowing in festival crowds &mdash; especially out on <strong>PhanArt</strong> lots, where the shoes are comfortable and the glasses are not.</p>
+          <a class="link-sparkle" href="https://instagram.com/sparktacles" target="_blank" rel="noopener" data-hover>Follow the sparkle trail @sparktacles</a>
+        </div>
+        <div class="about__icon" data-reveal>
+          <img src="sparktaclesicon.jpg" alt="Sparktacles icon: a looping white S with golden sparkles on lavender" width="320" height="320">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="gallery section" id="gallery">
+      <div class="wrap">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">the gem vault</p>
+          <h2 class="title title--script">Ready to wear</h2>
+          <p class="section__lede">Every piece is one-of-one. See something that sparkles? DM me on Instagram &mdash; first <em>Sparktacle</em> to claim it wins.</p>
+        </header>
+
+        <div class="filters" role="tablist" aria-label="Filter the gallery" data-reveal>
+          <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="sunglasses" aria-pressed="false">Sunglasses</button>
+          <button class="filter" data-filter="spectacles" aria-pressed="false">Spectacles</button>
+          <button class="filter" data-filter="goggles" aria-pressed="false">Goggles</button>
+          <button class="filter" data-filter="novelty" aria-pressed="false">Novelty</button>
+        </div>
+        <p class="filters__count" id="filterCount" aria-live="polite">6 pieces of sparkle</p>
+
+        <div class="masonry" id="masonry">
+
+          <!-- Leopard Luxe -->
+          <figure class="piece" data-category="sunglasses" data-reveal>
+            <div class="piece__art">
+              <svg viewBox="0 0 400 280" role="img" aria-label="Illustration of leopard-print rhinestone cat-eye sunglasses">
+                <defs>
+                  <linearGradient id="lv-bg" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#221236"/><stop offset="1" stop-color="#0d0618"/>
+                  </linearGradient>
+                  <filter id="lv-blur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="20"/></filter>
+                  <clipPath id="lv-clip"><path d="M50 112 C 84 96, 150 100, 176 122 C 188 132, 186 150, 174 158 C 142 178, 94 180, 66 166 C 46 156, 44 132, 50 112 Z"/></clipPath>
+                  <g id="lv-lens">
+                    <path d="M50 112 C 84 96, 150 100, 176 122 C 188 132, 186 150, 174 158 C 142 178, 94 180, 66 166 C 46 156, 44 132, 50 112 Z" fill="#f7b955"/>
+                    <g clip-path="url(#lv-clip)">
+                      <circle cx="92" cy="132" r="10" fill="#241831"/><circle cx="122" cy="118" r="7" fill="#241831"/>
+                      <circle cx="152" cy="132" r="11" fill="#241831"/><circle cx="106" cy="152" r="8" fill="#241831"/>
+                      <circle cx="142" cy="158" r="6" fill="#241831"/><circle cx="70" cy="140" r="6" fill="#241831"/>
+                      <circle cx="164" cy="150" r="7" fill="#241831"/><circle cx="96" cy="114" r="3" fill="#fff" opacity=".85"/>
+                      <circle cx="150" cy="120" r="2.4" fill="#fff" opacity=".7"/>
+                    </g>
+                    <path d="M50 112 C 84 96, 150 100, 176 122 C 188 132, 186 150, 174 158 C 142 178, 94 180, 66 166 C 46 156, 44 132, 50 112 Z" fill="none" stroke="#ff6ec7" stroke-width="9" stroke-linecap="round" stroke-dasharray="0.1 24"/>
+                    <path d="M50 112 C 84 96, 150 100, 176 122 C 188 132, 186 150, 174 158 C 142 178, 94 180, 66 166 C 46 156, 44 132, 50 112 Z" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 12"/>
+                  </g>
+                </defs>
+                <rect width="400" height="280" fill="url(#lv-bg)"/>
+                <g filter="url(#lv-blur)" opacity=".45">
+                  <circle cx="62" cy="58" r="26" fill="#ff6ec7"/><circle cx="330" cy="44" r="20" fill="#ffd166"/>
+                  <circle cx="306" cy="226" r="30" fill="#8a5cf6"/><circle cx="84" cy="234" r="16" fill="#4dc9ff"/>
+                </g>
+                <path d="M50 124 L14 104" stroke="#2a1b40" stroke-width="8" stroke-linecap="round"/>
+                <path d="M350 124 L386 104" stroke="#2a1b40" stroke-width="8" stroke-linecap="round"/>
+                <path d="M176 138 Q 200 122 224 138" fill="none" stroke="#2a1b40" stroke-width="9"/>
+                <use href="#lv-lens"/>
+                <use href="#lv-lens" transform="translate(400 0) scale(-1 1)"/>
+                <path d="M176 138 Q 200 122 224 138" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+                <path transform="translate(330 52) scale(.9)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#ffd166"/>
+                <path transform="translate(52 210) scale(.6)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#ff6ec7"/>
+              </svg>
+            </div>
+            <figcaption class="piece__meta">
+              <h3 class="piece__name">Leopard Luxe</h3>
+              <p class="piece__type">Cat-eye sunglasses &middot; one of one</p>
+            </figcaption>
+          </figure>
+
+          <!-- Rainbow Rave -->
+          <figure class="piece" data-category="sunglasses" data-reveal>
+            <div class="piece__art">
+              <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of round sunglasses with rainbow rhinestone rims">
+                <defs>
+                  <linearGradient id="rb-bg" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#221236"/><stop offset="1" stop-color="#0d0618"/>
+                  </linearGradient>
+                  <filter id="rb-blur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="20"/></filter>
+                  <radialGradient id="rb-lens" cx=".5" cy=".45" r=".75">
+                    <stop offset="0" stop-color="#3a2465"/><stop offset="1" stop-color="#140b28"/>
+                  </radialGradient>
+                  <g id="rb-lens-group">
+                    <circle cx="118" cy="158" r="60" fill="url(#rb-lens)" stroke="#2a1b40" stroke-width="10"/>
+                    <circle cx="118" cy="158" r="60" fill="none" stroke="#ff6ec7" stroke-width="11" stroke-linecap="round" stroke-dasharray="0.1 13"/>
+                    <circle cx="118" cy="158" r="60" fill="none" stroke="#ffd166" stroke-width="11" stroke-linecap="round" stroke-dasharray="0.1 26" stroke-dashoffset="13"/>
+                    <circle cx="118" cy="158" r="60" fill="none" stroke="#4dc9ff" stroke-width="11" stroke-linecap="round" stroke-dasharray="0.1 26" stroke-dashoffset="26"/>
+                    <circle cx="102" cy="142" r="10" fill="#fff" opacity=".18"/>
+                    <circle cx="96" cy="136" r="4" fill="#fff" opacity=".8"/>
+                  </g>
+                </defs>
+                <rect width="400" height="300" fill="url(#rb-bg)"/>
+                <g filter="url(#rb-blur)" opacity=".45">
+                  <circle cx="50" cy="70" r="24" fill="#4dc9ff"/><circle cx="350" cy="60" r="26" fill="#ff6ec7"/>
+                  <circle cx="320" cy="250" r="20" fill="#ffd166"/><circle cx="70" cy="250" r="18" fill="#8a5cf6"/>
+                </g>
+                <path d="M56 140 L20 118" stroke="#2a1b40" stroke-width="9" stroke-linecap="round"/>
+                <path d="M344 140 L380 118" stroke="#2a1b40" stroke-width="9" stroke-linecap="round"/>
+                <path d="M176 134 Q 200 118 224 134" fill="none" stroke="#2a1b40" stroke-width="10"/>
+                <path d="M176 134 Q 200 118 224 134" fill="none" stroke="#ff6ec7" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 11"/>
+                <use href="#rb-lens-group"/>
+                <use href="#rb-lens-group" transform="translate(400 0) scale(-1 1)"/>
+                <path transform="translate(332 84) scale(.8)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#4dc9ff"/>
+                <path transform="translate(56 206) scale(.55)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#ffd166"/>
+              </svg>
+            </div>
+            <figcaption class="piece__meta">
+              <h3 class="piece__name">Rainbow Rave</h3>
+              <p class="piece__type">Oversized round sunglasses &middot; one of one</p>
+            </figcaption>
+          </figure>
+
+          <!-- Third Eye Vision -->
+          <figure class="piece" data-category="novelty" data-reveal>
+            <div class="piece__art">
+              <svg viewBox="0 0 400 520" role="img" aria-label="Illustration of third-eye sunglasses with gold rhinestones">
+                <defs>
+                  <linearGradient id="te-bg" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#26143d"/><stop offset="1" stop-color="#0d0618"/>
+                  </linearGradient>
+                  <filter id="te-blur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="22"/></filter>
+                  <radialGradient id="te-glow" cx=".5" cy=".5" r=".5">
+                    <stop offset="0" stop-color="#ffd166" stop-opacity=".55"/><stop offset="1" stop-color="#ffd166" stop-opacity="0"/>
+                  </radialGradient>
+                  <g id="te-lens">
+                    <circle cx="118" cy="340" r="72" fill="rgba(42,27,64,.6)" stroke="#2a1b40" stroke-width="10"/>
+                    <circle cx="118" cy="340" r="72" fill="none" stroke="#ffd166" stroke-width="10" stroke-linecap="round" stroke-dasharray="0.1 13"/>
+                    <circle cx="118" cy="340" r="72" fill="none" stroke="#b388ff" stroke-width="10" stroke-linecap="round" stroke-dasharray="0.1 39" stroke-dashoffset="19"/>
+                    <circle cx="102" cy="324" r="10" fill="#fff" opacity=".2"/>
+                    <circle cx="96" cy="318" r="4" fill="#fff" opacity=".85"/>
+                  </g>
+                </defs>
+                <rect width="400" height="520" fill="url(#te-bg)"/>
+                <g filter="url(#te-blur)" opacity=".5">
+                  <circle cx="70" cy="100" r="26" fill="#8a5cf6"/><circle cx="324" cy="130" r="20" fill="#ff6ec7"/>
+                  <circle cx="330" cy="440" r="24" fill="#ffd166"/><circle cx="66" cy="460" r="20" fill="#4dc9ff"/>
+                </g>
+                <circle cx="200" cy="204" r="88" fill="url(#te-glow)"/>
+                <path d="M70 156 L330 156" stroke="#2a1b40" stroke-width="14" stroke-linecap="round"/>
+                <path d="M70 156 L330 156" stroke="#ffd166" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 12"/>
+                <circle cx="200" cy="196" r="36" fill="rgba(255,209,102,.16)" stroke="#2a1b40" stroke-width="8"/>
+                <circle cx="200" cy="196" r="36" fill="none" stroke="#ffd166" stroke-width="6" stroke-linecap="round" stroke-dasharray="0.1 10"/>
+                <circle cx="200" cy="196" r="14" fill="#b388ff"/><circle cx="205" cy="191" r="4" fill="#fff" opacity=".9"/>
+                <path d="M190 268 Q 200 252 210 268" fill="none" stroke="#2a1b40" stroke-width="10"/>
+                <use href="#te-lens"/>
+                <use href="#te-lens" transform="translate(400 0) scale(-1 1)"/>
+                <path d="M46 322 L14 300" stroke="#2a1b40" stroke-width="9" stroke-linecap="round"/>
+                <path d="M354 322 L386 300" stroke="#2a1b40" stroke-width="9" stroke-linecap="round"/>
+                <path transform="translate(318 236) scale(.9)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#ffd166"/>
+                <path transform="translate(56 60) scale(.7)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#b388ff"/>
+              </svg>
+            </div>
+            <figcaption class="piece__meta">
+              <h3 class="piece__name">Third Eye Vision</h3>
+              <p class="piece__type">Novelty sunglasses &middot; one of one</p>
+            </figcaption>
+          </figure>
+
+          <!-- Glacial Gaze -->
+          <figure class="piece" data-category="goggles" data-reveal>
+            <div class="piece__art">
+              <svg viewBox="0 0 400 240" role="img" aria-label="Illustration of ski goggles decorated with a sparkling eye design">
+                <defs>
+                  <linearGradient id="sk-bg" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#221236"/><stop offset="1" stop-color="#0d0618"/>
+                  </linearGradient>
+                  <filter id="sk-blur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="18"/></filter>
+                </defs>
+                <rect width="400" height="240" fill="url(#sk-bg)"/>
+                <g filter="url(#sk-blur)" opacity=".45">
+                  <circle cx="56" cy="50" r="22" fill="#4dc9ff"/><circle cx="348" cy="60" r="24" fill="#ff6ec7"/>
+                  <circle cx="318" cy="196" r="20" fill="#ffd166"/><circle cx="72" cy="196" r="16" fill="#8a5cf6"/>
+                </g>
+                <rect x="0" y="86" width="70" height="68" fill="#1c1033"/>
+                <rect x="330" y="86" width="70" height="68" fill="#1c1033"/>
+                <path d="M0 100 H70 M0 120 H70 M0 140 H70" stroke="#2a1b40" stroke-width="4"/>
+                <path d="M330 100 H400 M330 120 H400 M330 140 H400" stroke="#2a1b40" stroke-width="4"/>
+                <rect x="58" y="64" width="284" height="112" rx="56" fill="rgba(18,10,36,.88)" stroke="#f4edff" stroke-width="14"/>
+                <rect x="58" y="64" width="284" height="112" rx="56" fill="none" stroke="#b388ff" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 11"/>
+                <path d="M148 96 Q 142 72 132 60" stroke="#b388ff" stroke-width="5" stroke-linecap="round" fill="none"/>
+                <path d="M170 90 Q 170 66 164 50" stroke="#b388ff" stroke-width="5" stroke-linecap="round" fill="none"/>
+                <path d="M192 90 Q 196 66 192 52" stroke="#b388ff" stroke-width="5" stroke-linecap="round" fill="none"/>
+                <circle cx="132" cy="58" r="4" fill="#ffd166"/><circle cx="164" cy="48" r="4" fill="#ffd166"/><circle cx="192" cy="50" r="4" fill="#ffd166"/>
+                <ellipse cx="230" cy="122" rx="50" ry="36" fill="#8a5cf6"/>
+                <circle cx="230" cy="122" r="17" fill="#4dc9ff"/>
+                <circle cx="230" cy="122" r="8" fill="#150b2a"/>
+                <circle cx="236" cy="116" r="4" fill="#fff" opacity=".9"/>
+                <circle cx="222" cy="130" r="2.4" fill="#fff" opacity=".7"/>
+                <path d="M196 128 Q 200 148 214 152" stroke="#b388ff" stroke-width="4" stroke-linecap="round" fill="none"/>
+                <path transform="translate(50 30) scale(.7)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#4dc9ff"/>
+                <path transform="translate(320 20) scale(.9)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#ffd166"/>
+              </svg>
+            </div>
+            <figcaption class="piece__meta">
+              <h3 class="piece__name">Glacial Gaze</h3>
+              <p class="piece__type">Bedecked ski goggles &middot; one of one</p>
+            </figcaption>
+          </figure>
+
+          <!-- Crystal Clear -->
+          <figure class="piece" data-category="spectacles" data-reveal>
+            <div class="piece__art">
+              <svg viewBox="0 0 400 300" role="img" aria-label="Illustration of prescription glasses with crystal rhinestone rims">
+                <defs>
+                  <linearGradient id="cc-bg" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#1d1130"/><stop offset="1" stop-color="#0d0618"/>
+                  </linearGradient>
+                  <filter id="cc-blur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="20"/></filter>
+                  <g id="cc-frame">
+                    <rect x="62" y="118" width="114" height="78" rx="30" fill="rgba(255,255,255,.05)" stroke="#cbb7ff" stroke-width="7"/>
+                    <rect x="62" y="118" width="114" height="78" rx="30" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.1 9"/>
+                    <circle cx="82" cy="136" r="2.4" fill="#fff" opacity=".9"/>
+                    <circle cx="156" cy="180" r="2" fill="#fff" opacity=".7"/>
+                  </g>
+                </defs>
+                <rect width="400" height="300" fill="url(#cc-bg)"/>
+                <g filter="url(#cc-blur)" opacity=".4">
+                  <circle cx="54" cy="66" r="20" fill="#8a5cf6"/><circle cx="348" cy="90" r="18" fill="#ff6ec7"/>
+                  <circle cx="320" cy="250" r="22" fill="#4dc9ff"/><circle cx="76" cy="244" r="14" fill="#ffd166"/>
+                </g>
+                <path d="M62 138 L26 120" stroke="#cbb7ff" stroke-width="6" stroke-linecap="round"/>
+                <path d="M338 138 L374 120" stroke="#cbb7ff" stroke-width="6" stroke-linecap="round"/>
+                <path d="M176 142 Q 200 128 224 142" fill="none" stroke="#cbb7ff" stroke-width="6"/>
+                <path d="M176 142 Q 200 128 224 142" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 9"/>
+                <use href="#cc-frame"/>
+                <use href="#cc-frame" transform="translate(400 0) scale(-1 1)"/>
+                <path transform="translate(330 66) scale(.7)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#fff"/>
+                <path transform="translate(44 200) scale(.55)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#cbb7ff"/>
+              </svg>
+            </div>
+            <figcaption class="piece__meta">
+              <h3 class="piece__name">Crystal Clear Vision</h3>
+              <p class="piece__type">Everyday spectacles &middot; one of one</p>
+            </figcaption>
+          </figure>
+
+          <!-- Big Heart Energy -->
+          <figure class="piece" data-category="sunglasses" data-reveal>
+            <div class="piece__art">
+              <svg viewBox="0 0 400 440" role="img" aria-label="Illustration of heart-shaped sunglasses covered in pink rhinestones">
+                <defs>
+                  <linearGradient id="bh-bg" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#2a1136"/><stop offset="1" stop-color="#0d0618"/>
+                  </linearGradient>
+                  <filter id="bh-blur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="22"/></filter>
+                  <clipPath id="bh-clip"><path d="M118 158 C 96 120, 40 130, 44 178 C 47 210, 84 240, 118 260 C 152 240, 189 210, 192 178 C 196 130, 140 120, 118 158 Z"/></clipPath>
+                  <g id="bh-lens">
+                    <path d="M118 158 C 96 120, 40 130, 44 178 C 47 210, 84 240, 118 260 C 152 240, 189 210, 192 178 C 196 130, 140 120, 118 158 Z" fill="#ff5ea8"/>
+                    <g clip-path="url(#bh-clip)">
+                      <circle cx="92" cy="168" r="9" fill="#b3256b"/><circle cx="132" cy="158" r="7" fill="#b3256b"/>
+                      <circle cx="110" cy="204" r="8" fill="#b3256b"/><circle cx="70" cy="194" r="7" fill="#b3256b"/>
+                      <circle cx="150" cy="202" r="9" fill="#b3256b"/><circle cx="118" cy="236" r="7" fill="#b3256b"/>
+                      <circle cx="86" cy="142" r="3.2" fill="#fff" opacity=".9"/><circle cx="136" cy="146" r="2.6" fill="#fff" opacity=".75"/>
+                    </g>
+                    <path d="M118 158 C 96 120, 40 130, 44 178 C 47 210, 84 240, 118 260 C 152 240, 189 210, 192 178 C 196 130, 140 120, 118 158 Z" fill="none" stroke="#ffd166" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 12"/>
+                  </g>
+                </defs>
+                <rect width="400" height="440" fill="url(#bh-bg)"/>
+                <g filter="url(#bh-blur)" opacity=".5">
+                  <circle cx="66" cy="80" r="26" fill="#ff6ec7"/><circle cx="338" cy="110" r="20" fill="#ffd166"/>
+                  <circle cx="316" cy="386" r="24" fill="#ff5ea8"/><circle cx="70" cy="380" r="18" fill="#b388ff"/>
+                </g>
+                <path d="M46 166 L14 146" stroke="#2a1b40" stroke-width="9" stroke-linecap="round"/>
+                <path d="M354 166 L386 146" stroke="#2a1b40" stroke-width="9" stroke-linecap="round"/>
+                <path d="M192 170 Q 200 156 208 170" fill="none" stroke="#2a1b40" stroke-width="9"/>
+                <use href="#bh-lens"/>
+                <use href="#bh-lens" transform="translate(400 0) scale(-1 1)"/>
+                <path transform="translate(320 300) scale(.9)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#ff6ec7"/>
+                <path transform="translate(52 320) scale(.6)" d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z" fill="#ffd166"/>
+              </svg>
+            </div>
+            <figcaption class="piece__meta">
+              <h3 class="piece__name">Big Heart Energy</h3>
+              <p class="piece__type">Heart sunglasses &middot; one of one</p>
+            </figcaption>
+          </figure>
+
+          <!-- Bonus: gem size / style note piece -->
+          <figure class="piece" data-category="novelty" data-reveal>
+            <div class="piece__art piece__art--note">
+              <p class="piece__note">got a different vision?<br><span>I stock gems in every color &mdash; custom orders are my love language.</span></p>
+              <a href="#custom" class="btn btn--small" data-hover>Make it yours</a>
+            </div>
+            <figcaption class="piece__meta">
+              <h3 class="piece__name">Your Design Here</h3>
+              <p class="piece__type">Custom orders &middot; made to order</p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CUSTOM PROCESS ================= -->
+    <section class="custom section" id="custom">
+      <div class="wrap">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">the custom ritual</p>
+          <h2 class="title title--script">Send me your frames</h2>
+          <p class="section__lede">Got a beloved pair of glasses that deserves more glitter? Mail them over &mdash; they come back transformed. Here&rsquo;s how the sparkle happens:</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <span class="step__num" aria-hidden="true">1</span>
+            <h3 class="step__title">Slide into my DMs</h3>
+            <p>Tell me your wildest eyewear dream &mdash; or your exact vision. We talk colors, gems, and vibes until it feels right.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num" aria-hidden="true">2</span>
+            <h3 class="step__title">Send me your frames</h3>
+            <p>Box up your favorite specs, sunnies, or goggles. Don&rsquo;t have a pair? I&rsquo;ll source quality frames for you.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__num" aria-hidden="true">3</span>
+            <h3 class="step__title">Sparkle magic</h3>
+            <p>Every rhinestone is placed by hand, sealed with care, and shipped back ready for its stage debut.</p>
+          </li>
+        </ol>
+
+        <div class="custom__cta" data-reveal>
+          <a class="btn btn--primary btn--big magnetic" href="https://instagram.com/sparktacles" target="_blank" rel="noopener" data-hover>
+            <span class="magnetic__inner">Start a custom order &mdash; DM @sparktacles</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WALL OF FAME ================= -->
+    <section class="fame section" id="fame">
+      <div class="wrap">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">wall of fame</p>
+          <h2 class="title title--script">Spotted in the wild</h2>
+          <p class="section__lede">The best part of the job? Seeing Sparktacles glowing in festival crowds. Tag <strong>@sparktacles</strong> to join the wall.</p>
+        </header>
+
+        <div class="fame__grid">
+          <blockquote class="fame__card" data-reveal data-hover>
+            <svg viewBox="0 0 36 36" class="star star--gold" aria-hidden="true"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+            <p>&ldquo;My Leopard Luxe sunnies get more attention than the band. Zero regrets.&rdquo;</p>
+            <cite>&mdash; Maya, New York</cite>
+          </blockquote>
+          <blockquote class="fame__card" data-reveal data-hover>
+            <svg viewBox="0 0 36 36" class="star star--pink" aria-hidden="true"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+            <p>&ldquo;Liza turned my grandmother&rsquo;s old frames into treasure. I cried, then I sparkled.&rdquo;</p>
+            <cite>&mdash; Theo, Vermont</cite>
+          </blockquote>
+          <blockquote class="fame__card" data-reveal data-hover>
+            <svg viewBox="0 0 36 36" class="star star--blue" aria-hidden="true"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+            <p>&ldquo;The goggles. THE GOOGLES. Best-dressed on the whole mountain, obviously.&rdquo;</p>
+            <cite>&mdash; Sam, Colorado</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EVENTS ================= -->
+    <section class="events section" id="events">
+      <div class="wrap">
+        <header class="section__head" data-reveal>
+          <p class="eyebrow">catch the sparkle IRL</p>
+          <h2 class="title title--script">Upcoming events</h2>
+          <p class="section__lede">Come try pieces on in person at craft fairs and <strong>PhanArt</strong> lots. New dates drop as tours are announced &mdash; DM me for the latest.</p>
+        </header>
+
+        <ul class="events__list" data-reveal>
+          <li class="event" data-hover>
+            <span class="event__date"><b>Nov 14&ndash;15</b> 2026</span>
+            <span class="event__name">PhanArt Craft Fair</span>
+            <span class="event__city">Albany, NY</span>
+          </li>
+          <li class="event" data-hover>
+            <span class="event__date"><b>Dec 06</b> 2026</span>
+            <span class="event__name">Winter Wonder Market</span>
+            <span class="event__city">Burlington, VT</span>
+          </li>
+          <li class="event" data-hover>
+            <span class="event__date"><b>Dec 20</b> 2026</span>
+            <span class="event__name">Holiday Jam Bazaar</span>
+            <span class="event__city">Brooklyn, NY</span>
+          </li>
+          <li class="event" data-hover>
+            <span class="event__date"><b>Jan 17</b> 2027</span>
+            <span class="event__name">New Year, New Gems Pop-Up</span>
+            <span class="event__city">Boston, MA</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer__kicker">ready to shine?</p>
+      <a href="https://instagram.com/sparktacles" class="footer__wordmark" data-hover aria-label="DM Sparktacles on Instagram">Sparktacles</a>
+      <p class="footer__handle">@sparktacles &middot; DM to shop &middot; custom orders open</p>
+      <div class="footer__credits">
+        <span>&copy; 2026 Sparktacles &middot; designed &amp; bedazzled by Liza</span>
+        <span class="footer__sparkle-row" aria-hidden="true">
+          <svg viewBox="0 0 36 36" class="star star--gold"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+          sparkle responsibly
+          <svg viewBox="0 0 36 36" class="star star--gold"><path d="M18 0C20 10 26 16 36 18 26 20 20 26 18 36 16 26 10 20 0 18 10 16 16 10 18 0Z"/></svg>
+        </span>
+      </div>
+      <a href="#top" class="footer__top magnetic" data-hover aria-label="Back to top"><span class="magnetic__inner">&uarr; top</span></a>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

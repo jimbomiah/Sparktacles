@@ -1,0 +1,29 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 420' preserveAspectRatio='xMidYMid slice' role='img' aria-label=''>
+  <defs>
+    <filter id='soft' x='-80%' y='-80%' width='260%' height='260%'><feGaussianBlur stdDeviation='16'/></filter>
+    <filter id='mini' x='-80%' y='-80%' width='260%' height='260%'><feGaussianBlur stdDeviation='5'/></filter>
+    <radialGradient id='vig' cx='50%' cy='34%' r='78%'>
+      <stop offset='55%' stop-color='#140F23' stop-opacity='0'/>
+      <stop offset='100%' stop-color='#140F23' stop-opacity='0.92'/>
+    </radialGradient>
+    <linearGradient id='fade' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='55%' stop-color='#140F23' stop-opacity='0'/>
+      <stop offset='100%' stop-color='#140F23' stop-opacity='1'/>
+    </linearGradient>
+  </defs>
+  <rect width='1600' height='420' fill='#150F28'/>
+  <circle cx='140' cy='110' r='70' fill='#9D6BFB' opacity='0.3' filter='url(#soft)'/>
+  <circle cx='460' cy='60' r='55' fill='#FF7AC3' opacity='0.26' filter='url(#soft)'/>
+  <circle cx='820' cy='130' r='75' fill='#5BC7F0' opacity='0.22' filter='url(#soft)'/>
+  <circle cx='1180' cy='80' r='60' fill='#FFC93C' opacity='0.24' filter='url(#soft)'/>
+  <circle cx='1480' cy='180' r='80' fill='#E0479E' opacity='0.28' filter='url(#soft)'/>
+  <circle cx='320' cy='190' r='16' fill='#FFC93C' opacity='0.7' filter='url(#mini)'/>
+  <circle cx='640' cy='140' r='13' fill='#FFFFFF' opacity='0.5' filter='url(#mini)'/>
+  <circle cx='1020' cy='200' r='15' fill='#9D6BFB' opacity='0.7' filter='url(#mini)'/>
+  <circle cx='1330' cy='150' r='14' fill='#FF7AC3' opacity='0.7' filter='url(#mini)'/>
+  <polygon points='210,59 212.6,67.4 221,70 212.6,72.6 210,81 207.4,72.6 199,70 207.4,67.4' fill='#FFC93C' opacity='0.85'/>
+  <polygon points='920,81 922.2,87.8 929,90 922.2,92.2 920,99 917.8,92.2 911,90 917.8,87.8' fill='#FFFFFF' opacity='0.6'/>
+  <polygon points='1400,100 1402.4,107.6 1410,110 1402.4,112.4 1400,120 1397.6,112.4 1390,110 1397.6,107.6' fill='#FFC93C' opacity='0.7'/>
+  <rect width='1600' height='420' fill='url(#vig)'/>
+  <rect width='1600' height='420' fill='url(#fade)'/>
+</svg>

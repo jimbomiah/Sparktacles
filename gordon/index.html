@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     SPARKTACLES — "Let your spectacles sparkle!"
+     Hand-built by Gordon. One file. Zero frameworks. Zero apologies.
+     No build step, no runtime dependencies, no 8-megabyte hero JPEG.
+     The bokeh is rendered live on canvas. The glasses are hand-drawn SVG.
+     If you are trying to debug the sparkle math, just stop. Call my agent.
+     ============================================================ -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sparktacles — Let Your Spectacles Sparkle!</title>
+<meta name="description" content="Hand-bedazzled eyewear by Liza. One-of-one rhinestone sunglasses, spectacles, novelty frames and goggles. Send me your frames, let's talk.">
+<meta property="og:title" content="Sparktacles — Let Your Spectacles Sparkle!">
+<meta property="og:description" content="Hand-bedazzled eyewear for people who refuse to blend in. One-of-one rhinestone sunglasses, spectacles and goggles.">
+<meta property="og:image" content="assets/sparktacleslogo.jpg">
+<link rel="icon" type="image/jpeg" href="assets/sparktaclesicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ------------------------------------------------------------
+   Palette pulled straight off Liza's brand assets: the lavender
+   of the icon, the pink script of the wordmark, the gold of the
+   sparkles, the neon wash of the bokeh. Dark stage lighting base.
+   ------------------------------------------------------------ */
+:root{
+  --bg:#0c0918;
+  --bg2:#141027;
+  --card:#171130;
+  --card2:#1d1540;
+  --line:rgba(157,109,242,.22);
+  --lav:#9d6df2;
+  --pink:#ff4fd8;
+  --gold:#ffd76a;
+  --blue:#4fd8ff;
+  --ink:#f3edff;
+  --muted:#b9aede;
+  --script:'Allura',cursive;
+  --sans:'Quicksand',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:500;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+/* Film grain. Flat fills are for lazy people. - G */
+body::after{
+  content:"";position:fixed;inset:0;z-index:2000;pointer-events:none;opacity:.05;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+::selection{background:var(--pink);color:#fff}
+a{color:var(--gold);text-decoration:none}
+img{max-width:100%;display:block}
+section{scroll-margin-top:92px;position:relative}
+
+/* ---------- canvases ---------- */
+#sparkles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1500}
+#bokeh{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+
+/* ---------- nav ---------- */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;gap:1.5rem;
+  padding:.9rem clamp(1rem,4vw,3rem);
+  transition:background .35s ease,box-shadow .35s ease;
+  background:transparent;
+}
+#nav.scrolled{background:rgba(12,9,24,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:center;gap:.6rem;flex:0 0 auto}
+.brand img{width:38px;height:38px;border-radius:50%;border:2px solid var(--gold);box-shadow:0 0 14px rgba(255,215,106,.45)}
+.brand span{font-family:var(--script);font-size:1.75rem;color:#fff;text-shadow:0 0 18px rgba(255,79,216,.55);line-height:1;padding-bottom:.35rem}
+.navlinks{display:flex;gap:1.6rem;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{color:var(--muted);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;position:relative;padding:.3rem 0}
+.navlinks a::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:2px;background:linear-gradient(90deg,var(--pink),var(--gold));transition:width .3s ease,left .3s ease;border-radius:2px}
+.navlinks a:hover{color:#fff}
+.navlinks a:hover::after{width:100%;left:0}
+.ig-pill{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:.45rem;
+  border:1px solid var(--gold);color:var(--gold);border-radius:999px;
+  padding:.42rem 1.05rem;font-weight:700;font-size:.82rem;letter-spacing:.06em;
+  transition:all .3s ease;
+}
+.ig-pill:hover{background:var(--gold);color:#1a1030;box-shadow:0 0 22px rgba(255,215,106,.5)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;
+  background:radial-gradient(120% 90% at 50% 0%,#1b1140 0%,var(--bg) 62%);
+}
+.hero-inner{position:relative;z-index:2;padding:7.5rem 1.5rem 5rem;max-width:60rem}
+.overline{
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-size:.78rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:1.6rem;
+}
+.overline .star-ico{width:13px;height:13px;fill:var(--gold);animation:twirl 3.5s ease-in-out infinite}
+@keyframes twirl{0%,100%{transform:rotate(0deg) scale(1)}50%{transform:rotate(180deg) scale(1.25)}}
+.hero h1{
+  font-family:var(--script);font-weight:400;
+  font-size:clamp(4rem,11.5vw,9.5rem);
+  line-height:1.05;
+  background:linear-gradient(105deg,#ffb3e6 8%,#ffffff 45%,#e8d5ff 78%,#ffd76a 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 32px rgba(255,79,216,.35));
+  margin-bottom:.6rem;
+}
+.hero .tag{color:var(--muted);font-size:clamp(1rem,2.2vw,1.2rem);max-width:34rem;margin:0 auto 2.4rem}
+.hero .tag b{color:#fff}
+.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;border:0;
+  font-family:var(--sans);font-weight:700;font-size:.92rem;letter-spacing:.05em;
+  padding:.95rem 1.9rem;border-radius:999px;position:relative;transition:all .3s ease;
+}
+.btn .star-ico{width:15px;height:15px;fill:currentColor;transition:transform .5s cubic-bezier(.2,.9,.3,1.4)}
+.btn:hover .star-ico{transform:rotate(180deg) scale(1.3)}
+.btn-primary{
+  color:#fff;background:linear-gradient(120deg,var(--lav),var(--pink));
+  box-shadow:0 8px 30px rgba(255,79,216,.35);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 42px rgba(255,79,216,.5)}
+.btn-ghost{color:var(--gold);background:transparent;border:1.5px solid var(--gold)}
+.btn-ghost:hover{background:rgba(255,215,106,.12);transform:translateY(-3px);box-shadow:0 0 26px rgba(255,215,106,.25)}
+.chip{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:2.6rem;
+  font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);
+  border:1px solid rgba(79,216,255,.35);border-radius:999px;padding:.5rem 1.2rem;
+  background:rgba(79,216,255,.06);
+}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--muted);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;z-index:2;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
+
+/* ---------- marquee ---------- */
+.marquee{
+  background:linear-gradient(90deg,var(--lav),var(--pink),var(--gold),var(--pink),var(--lav));
+  transform:rotate(-1.2deg) scale(1.02);overflow:hidden;padding:.65rem 0;
+  box-shadow:0 10px 40px rgba(255,79,216,.25);
+}
+.marquee-track{display:flex;width:max-content;animation:slide 26s linear infinite}
+.marquee span{
+  color:#160c2e;font-weight:700;font-size:.85rem;letter-spacing:.24em;text-transform:uppercase;
+  white-space:nowrap;padding:0 1.4rem;
+}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- section chrome ---------- */
+.wrap{max-width:74rem;margin:0 auto;padding:6.5rem clamp(1.2rem,4vw,3rem)}
+.sec-head{text-align:center;margin-bottom:3.4rem}
+.kicker{font-size:.76rem;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.7rem}
+.sec-head h2{font-family:var(--script);font-weight:400;font-size:clamp(2.8rem,6.5vw,4.6rem);line-height:1.1;color:#fff;text-shadow:0 0 34px rgba(157,109,242,.4)}
+.sec-head p{color:var(--muted);max-width:36rem;margin:1rem auto 0}
+.rule{display:flex;align-items:center;gap:.8rem;justify-content:center;margin-top:1.4rem}
+.rule::before,.rule::after{content:"";height:1px;width:min(110px,22vw);background:linear-gradient(90deg,transparent,var(--gold))}
+.rule::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.rule .star-ico{width:14px;height:14px;fill:var(--gold)}
+
+/* ---------- collection ---------- */
+.filters{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin-bottom:2.6rem}
+.fbtn{
+  cursor:pointer;font-family:var(--sans);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.55rem 1.3rem;
+  transition:all .25s ease;
+}
+.fbtn:hover{color:#fff;border-color:var(--lav)}
+.fbtn.on{color:#fff;background:linear-gradient(120deg,var(--lav),var(--pink));border-color:transparent;box-shadow:0 6px 20px rgba(157,109,242,.4)}
+.grid{columns:3 270px;column-gap:1.4rem}
+/* CSS multi-column masonry. Old. Reliable. Zero JavaScript layout thrash.
+   Your infinite-scroll library reflows the DOM 40 times a second; this does it never. - G */
+.card{
+  break-inside:avoid;margin-bottom:1.4rem;background:var(--card);
+  border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,79,216,.5);box-shadow:0 18px 50px rgba(255,79,216,.18),0 0 0 1px rgba(255,79,216,.25)}
+.card.hide{display:none}
+.plate{aspect-ratio:420/280;position:relative;background:#120c22}
+.plate svg{width:100%;height:100%;display:block}
+.gemring{animation:gemPulse 2.4s ease-in-out infinite alternate}
+.card:hover .gemring{animation-duration:1s}
+@keyframes gemPulse{from{opacity:.72}to{opacity:1}}
+.card .meta{padding:1.15rem 1.25rem 1.3rem;display:flex;flex-direction:column;gap:.5rem}
+.card .meta h3{font-family:var(--script);font-weight:400;font-size:1.75rem;color:#fff;line-height:1}
+.card .row{display:flex;align-items:center;justify-content:space-between;gap:.8rem}
+.cat{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);border:1px solid rgba(79,216,255,.3);padding:.22rem .7rem;border-radius:999px}
+.price{color:var(--gold);font-weight:700;font-size:1.05rem}
+.badge{position:absolute;top:.9rem;left:.9rem;z-index:2;font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:linear-gradient(120deg,var(--pink),var(--lav));color:#fff;padding:.32rem .8rem;border-radius:999px;box-shadow:0 4px 16px rgba(255,79,216,.4)}
+.badge.gold{background:linear-gradient(120deg,var(--gold),#ffb45e);color:#2a1806;box-shadow:0 4px 16px rgba(255,215,106,.4)}
+.plate-note{position:absolute;bottom:.8rem;right:1rem;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,237,255,.45)}
+
+/* ---------- custom process ---------- */
+#custom{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 30%,var(--bg2) 70%,var(--bg) 100%)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem;margin-bottom:4rem}
+.step{
+  background:var(--card);border:1px solid var(--line);border-radius:22px;padding:1.8rem 1.5rem;position:relative;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.step:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(157,109,242,.22)}
+.step .num{
+  font-family:var(--script);font-size:2.6rem;color:var(--gold);line-height:1;
+  display:block;margin-bottom:.6rem;text-shadow:0 0 18px rgba(255,215,106,.45);
+}
+.step h3{font-size:1.02rem;font-weight:700;letter-spacing:.04em;margin-bottom:.5rem;color:#fff}
+.step p{color:var(--muted);font-size:.92rem}
+.step .star-ico{position:absolute;top:1.4rem;right:1.4rem;width:16px;height:16px;fill:var(--pink);opacity:.8}
+
+.formbox{
+  background:var(--card);border:1px solid var(--line);border-radius:26px;
+  padding:clamp(1.6rem,4vw,2.8rem);max-width:46rem;margin:0 auto;position:relative;overflow:hidden;
+}
+.formbox::before{
+  content:"";position:absolute;inset:-1px;border-radius:26px;padding:1px;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,79,216,.5),transparent 30%,transparent 70%,rgba(255,215,106,.5));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:1.1rem}
+.f-grid .full{grid-column:1/-1}
+label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
+input,select,textarea{
+  width:100%;background:#0f0a20;border:1px solid var(--line);border-radius:14px;
+  color:var(--ink);font-family:var(--sans);font-weight:500;font-size:.95rem;
+  padding:.85rem 1.05rem;transition:border-color .25s ease,box-shadow .25s ease;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 3px rgba(255,79,216,.18)}
+textarea{min-height:110px;resize:vertical}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239d6df2' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.form-note{color:var(--muted);font-size:.82rem;text-align:center;margin-top:1rem}
+.form-note b{color:var(--gold)}
+/* There is no backend here. It is a DM business. The form exists to
+   prepare you for the conversation, not to feed a database. - G */
+
+/* ---------- fame wall ---------- */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.quote{
+  background:var(--card);border:1px solid var(--line);border-radius:22px;padding:2rem 1.7rem;position:relative;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.quote:hover{transform:translateY(-5px) rotate(-.6deg);box-shadow:0 16px 44px rgba(255,79,216,.18)}
+.quote .qmark{font-family:var(--script);font-size:3.4rem;line-height:.5;color:var(--pink);display:block;margin-bottom:1rem;text-shadow:0 0 20px rgba(255,79,216,.5)}
+.quote p{color:var(--ink);font-size:1.02rem;font-style:italic;margin-bottom:1.2rem}
+.quote .stars{display:flex;gap:.25rem;margin-bottom:.9rem}
+.quote .stars .star-ico{width:13px;height:13px;fill:var(--gold)}
+.quote cite{font-style:normal;font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+
+/* ---------- tour ---------- */
+/* I used a table here. Yes, a table. And it renders 400ms faster than
+   your flexbox trash. Tabular data belongs in a table. Ask any browser. - Gordon */
+.tour-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.tour-table th{
+  text-align:left;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  padding:1.1rem 1.4rem;border-bottom:1px solid var(--line);background:rgba(157,109,242,.08);
+}
+.tour-table td{padding:1.15rem 1.4rem;border-bottom:1px solid rgba(157,109,242,.12);color:var(--muted);font-size:.95rem;vertical-align:middle}
+.tour-table tr:last-child td{border-bottom:0}
+.tour-table tbody tr{transition:background .25s ease}
+.tour-table tbody tr:hover{background:rgba(157,109,242,.07)}
+.tour-table .date{color:#fff;font-weight:700;white-space:nowrap}
+.tour-table .venue{color:#fff;font-weight:600}
+.tstatus{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:.3rem .85rem}
+.t-ok{background:rgba(157,109,242,.2);color:#cbb2ff;border:1px solid rgba(157,109,242,.5)}
+.t-wait{color:var(--gold);border:1px solid rgba(255,215,106,.45);background:rgba(255,215,106,.07)}
+.t-dm{color:var(--blue);border:1px solid rgba(79,216,255,.4);background:rgba(79,216,255,.06)}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.4rem;align-items:center}
+.about-copy p{color:var(--muted);margin-bottom:1.1rem;font-size:1.02rem}
+.about-copy p b{color:#fff}
+.about-copy .sig{font-family:var(--script);font-size:2.4rem;color:var(--pink);text-shadow:0 0 22px rgba(255,79,216,.5);margin-top:.4rem;display:inline-block}
+.frame{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 70px rgba(157,109,242,.28);transform:rotate(1.4deg);transition:transform .4s ease}
+.frame:hover{transform:rotate(0deg) scale(1.015)}
+.frame img{width:100%;aspect-ratio:16/8.4;object-fit:cover}
+.frame figcaption{position:absolute;bottom:0;left:0;right:0;padding:.7rem 1.1rem;background:linear-gradient(180deg,transparent,rgba(10,6,20,.85));font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3.6rem;text-align:center}
+.stat .n{font-family:var(--script);font-size:clamp(2.6rem,5vw,3.6rem);line-height:1;background:linear-gradient(120deg,var(--gold),#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:.5rem}
+
+/* ---------- footer ---------- */
+footer{
+  position:relative;text-align:center;padding:6rem 1.5rem 3rem;overflow:hidden;
+  background:radial-gradient(90% 120% at 50% 115%,#241448 0%,var(--bg) 70%);
+}
+footer .word{font-family:var(--script);font-size:clamp(3.4rem,9vw,6.4rem);line-height:1;background:linear-gradient(105deg,#ffb3e6,#fff 50%,#e8d5ff);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 26px rgba(255,79,216,.4))}
+footer .line{color:var(--muted);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin:1.4rem 0 2.2rem}
+footer .fine{color:rgba(185,174,222,.55);font-size:.76rem;margin-top:2.6rem}
+footer .fine .sep{color:var(--gold)}
+
+/* ---------- floating DM pill ---------- */
+#dmPill{
+  position:fixed;bottom:1.4rem;right:1.4rem;z-index:1200;display:inline-flex;align-items:center;gap:.5rem;
+  background:linear-gradient(120deg,var(--lav),var(--pink));color:#fff;font-weight:700;font-size:.86rem;letter-spacing:.05em;
+  padding:.85rem 1.5rem;border-radius:999px;box-shadow:0 10px 34px rgba(255,79,216,.45);
+  transform:translateY(120%);opacity:0;transition:transform .45s cubic-bezier(.2,.9,.3,1.2),opacity .45s ease;
+}
+#dmPill.show{transform:translateY(0);opacity:1}
+#dmPill:hover{transform:translateY(-4px)}
+#dmPill .star-ico{width:14px;height:14px;fill:currentColor;animation:twirl 3s ease-in-out infinite}
+
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;z-index:1600;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:rgba(8,5,18,.78);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s ease}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-card{
+  background:var(--card2);border:1px solid rgba(255,79,216,.4);border-radius:26px;max-width:26rem;width:100%;
+  padding:2.6rem 2.2rem;text-align:center;transform:translateY(24px) scale(.96);transition:transform .35s cubic-bezier(.2,.9,.3,1.25);
+  box-shadow:0 30px 90px rgba(255,79,216,.25);
+}
+.modal.open .modal-card{transform:translateY(0) scale(1)}
+.modal-card .star-ico{width:44px;height:44px;fill:var(--gold);filter:drop-shadow(0 0 16px rgba(255,215,106,.6));margin-bottom:1rem;animation:twirl 4s ease-in-out infinite}
+.modal-card h3{font-family:var(--script);font-weight:400;font-size:2.3rem;color:#fff;margin-bottom:.7rem}
+.modal-card p{color:var(--muted);font-size:.94rem;margin-bottom:1.6rem}
+.modal-card p b{color:var(--gold)}
+.modal-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .quotes{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:2.2rem}
+}
+@media (max-width:640px){
+  .steps{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr}
+  .tour-table thead{display:none}
+  .tour-table td{display:block;border-bottom:0;padding:.5rem 1.4rem}
+  .tour-table tbody tr{display:block;border-bottom:1px solid rgba(157,109,242,.14);padding:.8rem 0}
+  .tour-table{display:block}
+  .navlinks{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- Shared vector vocabulary: one symbol, one blur filter, three lens tints.
+     Every "photo" in the shop is drawn from these. No stock. No vendors. - G -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="star4" viewBox="0 0 100 100">
+      <path d="M50 0 C55 35 65 45 100 50 C65 55 55 65 50 100 C45 65 35 55 0 50 C35 45 45 35 50 0 Z"/>
+    </symbol>
+    <filter id="fBlur6" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="fBlur16" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+    <linearGradient id="plateGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1240"/><stop offset="1" stop-color="#0d0918"/>
+    </linearGradient>
+    <linearGradient id="lensDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2c2050"/><stop offset="1" stop-color="#150e2c"/>
+    </linearGradient>
+    <linearGradient id="lensPink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a2a58"/><stop offset="1" stop-color="#1d1236"/>
+    </linearGradient>
+    <linearGradient id="lensBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c3a5e"/><stop offset="1" stop-color="#101a34"/>
+    </linearGradient>
+    <linearGradient id="lensIce" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9ecfff" stop-opacity=".55"/><stop offset="1" stop-color="#5f7fd0" stop-opacity=".4"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<canvas id="sparkles" aria-hidden="true"></canvas>
+
+<nav id="nav" aria-label="Main">
+  <a class="brand" href="#top">
+    <img src="assets/sparktaclesicon.jpg" alt="Sparktacles icon">
+    <span>Sparktacles</span>
+  </a>
+  <div class="navlinks">
+    <a href="#collection">Collection</a>
+    <a href="#custom">Custom</a>
+    <a href="#fame">Fame Wall</a>
+    <a href="#tour">Tour</a>
+    <a href="#about">About</a>
+  </div>
+  <a class="ig-pill" href="https://instagram.com/sparktacles" target="_blank" rel="noopener">@sparktacles</a>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="bokeh" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <span class="overline">
+      <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>
+      Hand-bedazzled eyewear &middot; one of one
+      <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>
+    </span>
+    <h1>Let your spectacles sparkle!</h1>
+    <p class="tag">Rhinestones, gems and pure joy, placed by hand on sunglasses, prescription frames, novelty shades and ski goggles &mdash; by <b>Liza</b>, for people who refuse to blend in.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#collection"><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>Shop ready-to-wear</a>
+      <a class="btn btn-ghost" href="#custom"><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>Start a custom order</a>
+    </div>
+    <span class="chip"><i></i>Now vending &mdash; catch the tour</span>
+  </div>
+  <span class="scroll-hint">scroll &amp; shine</span>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Let your spectacles sparkle ✦</span><span>One-of-one designs ✦</span><span>Send me your frames ✦</span><span>Custom orders open ✦</span><span>Seen at shows everywhere ✦</span><span>@sparktacles ✦</span>
+    <span>Let your spectacles sparkle ✦</span><span>One-of-one designs ✦</span><span>Send me your frames ✦</span><span>Custom orders open ✦</span><span>Seen at shows everywhere ✦</span><span>@sparktacles ✦</span>
+  </div>
+</div>
+
+<section id="collection">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">The Collection</span>
+      <h2>Fresh off the workbench</h2>
+      <p>Every pair is one of one. When it's gone, it's gone &mdash; DM @sparktacles to claim yours before someone with faster thumbs does.</p>
+      <div class="rule"><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg></div>
+    </div>
+
+    <div class="filters reveal" role="group" aria-label="Filter the collection">
+      <button class="fbtn on" data-filter="all" type="button">All</button>
+      <button class="fbtn" data-filter="sunglasses" type="button">Sunglasses</button>
+      <button class="fbtn" data-filter="spectacles" type="button">Spectacles</button>
+      <button class="fbtn" data-filter="novelty" type="button">Novelty</button>
+      <button class="fbtn" data-filter="goggles" type="button">Goggles</button>
+    </div>
+
+    <div class="grid">
+
+      <!-- Each rhinestone ring below is ONE stroke element with round-cap
+           dashes. Fifteen gems, one attribute. Your icon library renders
+           the same thing with 30 DOM nodes and a runtime. You're welcome. - G -->
+      <article class="card reveal" data-cat="sunglasses">
+        <div class="plate">
+          <svg viewBox="0 0 420 280" role="img" aria-label="Cheetah Crush — leopard print rhinestone cat-eye sunglasses">
+            <rect width="420" height="280" fill="url(#plateGrad)"/>
+            <circle cx="70" cy="60" r="34" fill="#ff4fd8" opacity=".3" filter="url(#fBlur16)"/>
+            <circle cx="352" cy="48" r="42" fill="#ffd76a" opacity=".28" filter="url(#fBlur16)"/>
+            <circle cx="380" cy="210" r="30" fill="#9d6df2" opacity=".34" filter="url(#fBlur16)"/>
+            <circle cx="30" cy="220" r="24" fill="#4fd8ff" opacity=".26" filter="url(#fBlur16)"/>
+            <use href="#star4" x="322" y="120" width="11" height="11" fill="#ffd76a" opacity=".9"/>
+            <use href="#star4" x="96" y="30" width="8" height="8" fill="#ff8ad8" opacity=".8"/>
+            <ellipse cx="210" cy="242" rx="140" ry="11" fill="#050308" opacity=".55" filter="url(#fBlur6)"/>
+            <path d="M66 132 C70 112 100 104 132 108 C160 112 178 124 180 138 C182 154 168 176 142 186 C112 196 84 188 72 170 C64 158 62 144 66 132 Z" fill="url(#lensDark)"/>
+            <path d="M66 132 C70 112 100 104 132 108 C160 112 178 124 180 138 C182 154 168 176 142 186 C112 196 84 188 72 170 C64 158 62 144 66 132 Z" transform="translate(420,0) scale(-1,1)" fill="url(#lensDark)"/>
+            <path d="M66 132 C70 112 100 104 132 108 C160 112 178 124 180 138 C182 154 168 176 142 186 C112 196 84 188 72 170 C64 158 62 144 66 132 Z" fill="none" stroke="#3a2a1c" stroke-width="11"/>
+            <path d="M66 132 C70 112 100 104 132 108 C160 112 178 124 180 138 C182 154 168 176 142 186 C112 196 84 188 72 170 C64 158 62 144 66 132 Z" transform="translate(420,0) scale(-1,1)" fill="none" stroke="#3a2a1c" stroke-width="11"/>
+            <path class="gemring" d="M66 132 C70 112 100 104 132 108 C160 112 178 124 180 138 C182 154 168 176 142 186 C112 196 84 188 72 170 C64 158 62 144 66 132 Z" fill="none" stroke="#ffd76a" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 14" style="animation-duration:2.1s"/>
+            <path class="gemring" d="M66 132 C70 112 100 104 132 108 C160 112 178 124 180 138 C182 154 168 176 142 186 C112 196 84 188 72 170 C64 158 62 144 66 132 Z" transform="translate(420,0) scale(-1,1)" fill="none" stroke="#ffd76a" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 14" style="animation-duration:2.1s"/>
+            <path class="gemring" d="M66 132 C70 112 100 104 132 108 C160 112 178 124 180 138 C182 154 168 176 142 186 C112 196 84 188 72 170 C64 158 62 144 66 132 Z" fill="none" stroke="#8a5a2e" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 14" stroke-dashoffset="7" style="animation-duration:2.7s"/>
+            <path class="gemring" d="M66 132 C70 112 100 104 132 108 C160 112 178 124 180 138 C182 154 168 176 142 186 C112 196 84 188 72 170 C64 158 62 144 66 132 Z" transform="translate(420,0) scale(-1,1)" fill="none" stroke="#8a5a2e" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 14" stroke-dashoffset="7" style="animation-duration:2.7s"/>
+            <path class="gemring" d="M180 140 C192 128 228 128 240 140" fill="none" stroke="#ffd76a" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 12" style="animation-duration:1.8s"/>
+            <rect x="96" y="150" width="120" height="10" rx="5" fill="#fff" opacity=".1" transform="rotate(-24 156 155)"/>
+            <rect x="204" y="150" width="120" height="10" rx="5" fill="#fff" opacity=".1" transform="rotate(24 264 155)"/>
+          </svg>
+          <span class="badge gold">One of one</span>
+        </div>
+        <div class="meta">
+          <h3>Cheetah Crush</h3>
+          <div class="row"><span class="cat">Sunglasses</span><span class="price">$85</span></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="sunglasses">
+        <div class="plate">
+          <svg viewBox="0 0 420 280" role="img" aria-label="Prism Rodeo — rainbow rhinestone round sunglasses">
+            <rect width="420" height="280" fill="url(#plateGrad)"/>
+            <circle cx="90" cy="50" r="38" fill="#9d6df2" opacity=".32" filter="url(#fBlur16)"/>
+            <circle cx="330" cy="70" r="34" fill="#ff4fd8" opacity=".3" filter="url(#fBlur16)"/>
+            <circle cx="370" cy="220" r="40" fill="#4fd8ff" opacity=".26" filter="url(#fBlur16)"/>
+            <circle cx="60" cy="230" r="28" fill="#ffd76a" opacity=".3" filter="url(#fBlur16)"/>
+            <use href="#star4" x="58" y="120" width="10" height="10" fill="#ffd76a" opacity=".9"/>
+            <use href="#star4" x="356" y="140" width="12" height="12" fill="#ff8ad8" opacity=".85"/>
+            <ellipse cx="210" cy="242" rx="150" ry="11" fill="#050308" opacity=".55" filter="url(#fBlur6)"/>
+            <circle cx="128" cy="152" r="54" fill="url(#lensBlue)"/>
+            <circle cx="292" cy="152" r="54" fill="url(#lensBlue)"/>
+            <circle class="gemring" cx="128" cy="152" r="58" fill="none" stroke="#ff4fd8" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 15" style="animation-duration:2s"/>
+            <circle class="gemring" cx="128" cy="152" r="58" fill="none" stroke="#ffd76a" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 15" stroke-dashoffset="7.6" style="animation-duration:2s"/>
+            <circle class="gemring" cx="128" cy="152" r="49" fill="none" stroke="#4fd8ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 13" style="animation-duration:2.6s"/>
+            <circle class="gemring" cx="292" cy="152" r="58" fill="none" stroke="#ff4fd8" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 15" style="animation-duration:2s"/>
+            <circle class="gemring" cx="292" cy="152" r="58" fill="none" stroke="#ffd76a" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.1 15" stroke-dashoffset="7.6" style="animation-duration:2s"/>
+            <circle class="gemring" cx="292" cy="152" r="49" fill="none" stroke="#4fd8ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 13" style="animation-duration:2.6s"/>
+            <path class="gemring" d="M182 140 C196 126 224 126 238 140" fill="none" stroke="#ffd76a" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 11" style="animation-duration:1.7s"/>
+            <rect x="94" y="128" width="110" height="9" rx="4.5" fill="#fff" opacity=".14" transform="rotate(-28 149 132)"/>
+            <rect x="258" y="128" width="110" height="9" rx="4.5" fill="#fff" opacity=".14" transform="rotate(28 313 132)"/>
+          </svg>
+          <span class="badge">Fan favorite</span>
+        </div>
+        <div class="meta">
+          <h3>Prism Rodeo</h3>
+          <div class="row"><span class="cat">Sunglasses</span><span class="price">$95</span></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="spectacles">
+        <div class="plate">
+          <svg viewBox="0 0 420 280" role="img" aria-label="Bride of Frankie — crystal and pink rhinestone prescription glasses">
+            <rect width="420" height="280" fill="url(#plateGrad)"/>
+            <circle cx="80" cy="70" r="36" fill="#ff8ad8" opacity=".3" filter="url(#fBlur16)"/>
+            <circle cx="345" cy="55" r="30" fill="#ffd76a" opacity=".3" filter="url(#fBlur16)"/>
+            <circle cx="370" cy="215" r="34" fill="#ff4fd8" opacity=".26" filter="url(#fBlur16)"/>
+            <use href="#star4" x="340" y="150" width="10" height="10" fill="#ffd76a" opacity=".9"/>
+            <use href="#star4" x="70" y="150" width="9" height="9" fill="#e8d5ff" opacity=".85"/>
+            <ellipse cx="210" cy="240" rx="130" ry="10" fill="#050308" opacity=".55" filter="url(#fBlur6)"/>
+            <rect x="80" y="118" width="106" height="74" rx="32" fill="url(#lensPink)" fill-opacity=".85"/>
+            <rect x="234" y="118" width="106" height="74" rx="32" fill="url(#lensPink)" fill-opacity=".85"/>
+            <rect class="gemring" x="80" y="118" width="106" height="74" rx="32" fill="none" stroke="#ffd9ee" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 13" style="animation-duration:2.3s"/>
+            <rect class="gemring" x="80" y="118" width="106" height="74" rx="32" fill="none" stroke="#ff4fd8" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 13" stroke-dashoffset="6.6" style="animation-duration:2.3s"/>
+            <rect class="gemring" x="234" y="118" width="106" height="74" rx="32" fill="none" stroke="#ffd9ee" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 13" style="animation-duration:2.3s"/>
+            <rect class="gemring" x="234" y="118" width="106" height="74" rx="32" fill="none" stroke="#ff4fd8" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 13" stroke-dashoffset="6.6" style="animation-duration:2.3s"/>
+            <path class="gemring" d="M186 138 C198 128 222 128 234 138" fill="none" stroke="#ffd9ee" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 11" style="animation-duration:1.9s"/>
+            <rect x="104" y="132" width="80" height="9" rx="4.5" fill="#fff" opacity=".16" transform="rotate(-22 144 136)"/>
+            <rect x="258" y="132" width="80" height="9" rx="4.5" fill="#fff" opacity=".16" transform="rotate(22 298 136)"/>
+          </svg>
+          <span class="plate-note">your frames, upgraded</span>
+        </div>
+        <div class="meta">
+          <h3>Bride of Frankie</h3>
+          <div class="row"><span class="cat">Spectacles</span><span class="price">$110</span></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="novelty">
+        <div class="plate">
+          <svg viewBox="0 0 420 280" role="img" aria-label="Third Eye Open — novelty three-lens rhinestone sunglasses">
+            <rect width="420" height="280" fill="url(#plateGrad)"/>
+            <circle cx="210" cy="46" r="34" fill="#ffd76a" opacity=".32" filter="url(#fBlur16)"/>
+            <circle cx="60" cy="80" r="30" fill="#9d6df2" opacity=".34" filter="url(#fBlur16)"/>
+            <circle cx="366" cy="90" r="30" fill="#ff4fd8" opacity=".28" filter="url(#fBlur16)"/>
+            <circle cx="210" cy="248" r="26" fill="#4fd8ff" opacity=".24" filter="url(#fBlur16)"/>
+            <use href="#star4" x="150" y="24" width="10" height="10" fill="#ffd76a" opacity=".95"/>
+            <use href="#star4" x="262" y="30" width="8" height="8" fill="#c9a6ff" opacity=".85"/>
+            <ellipse cx="210" cy="244" rx="130" ry="10" fill="#050308" opacity=".55" filter="url(#fBlur6)"/>
+            <circle cx="128" cy="168" r="42" fill="url(#lensDark)"/>
+            <circle cx="292" cy="168" r="42" fill="url(#lensDark)"/>
+            <circle cx="210" cy="100" r="26" fill="url(#lensPink)"/>
+            <circle class="gemring" cx="128" cy="168" r="46" fill="none" stroke="#9d6df2" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 13" style="animation-duration:2.2s"/>
+            <circle class="gemring" cx="128" cy="168" r="46" fill="none" stroke="#ffd76a" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 13" stroke-dashoffset="6.6" style="animation-duration:2.2s"/>
+            <circle class="gemring" cx="292" cy="168" r="46" fill="none" stroke="#9d6df2" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 13" style="animation-duration:2.2s"/>
+            <circle class="gemring" cx="292" cy="168" r="46" fill="none" stroke="#ffd76a" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 13" stroke-dashoffset="6.6" style="animation-duration:2.2s"/>
+            <circle class="gemring" cx="210" cy="100" r="29" fill="none" stroke="#ffd76a" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 12" style="animation-duration:1.8s"/>
+            <path class="gemring" d="M170 148 C186 132 234 132 250 148" fill="none" stroke="#9d6df2" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 11" style="animation-duration:2s"/>
+            <rect x="100" y="152" width="90" height="9" rx="4.5" fill="#fff" opacity=".13" transform="rotate(-26 145 156)"/>
+            <rect x="262" y="152" width="90" height="9" rx="4.5" fill="#fff" opacity=".13" transform="rotate(26 307 156)"/>
+          </svg>
+          <span class="badge gold">Conversation starter</span>
+        </div>
+        <div class="meta">
+          <h3>Third Eye Open</h3>
+          <div class="row"><span class="cat">Novelty</span><span class="price">$75</span></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="goggles">
+        <div class="plate">
+          <svg viewBox="0 0 420 280" role="img" aria-label="Powder Dolls — gem-covered ski goggles">
+            <rect width="420" height="280" fill="url(#plateGrad)"/>
+            <circle cx="70" cy="60" r="40" fill="#4fd8ff" opacity=".28" filter="url(#fBlur16)"/>
+            <circle cx="350" cy="52" r="36" fill="#ff4fd8" opacity=".3" filter="url(#fBlur16)"/>
+            <circle cx="380" cy="215" r="30" fill="#ffd76a" opacity=".28" filter="url(#fBlur16)"/>
+            <circle cx="42" cy="215" r="26" fill="#9d6df2" opacity=".32" filter="url(#fBlur16)"/>
+            <use href="#star4" x="196" y="70" width="11" height="11" fill="#ffd76a" opacity=".95"/>
+            <ellipse cx="210" cy="248" rx="160" ry="10" fill="#050308" opacity=".55" filter="url(#fBlur6)"/>
+            <path d="M84 156 C78 118 96 104 126 102 C170 98 250 98 294 102 C324 104 342 118 336 156 C330 190 306 208 262 210 C238 212 182 212 158 210 C114 208 90 190 84 156 Z" fill="url(#lensIce)" stroke="#f4efff" stroke-width="9"/>
+            <path class="gemring" d="M84 156 C78 118 96 104 126 102 C170 98 250 98 294 102 C324 104 342 118 336 156 C330 190 306 208 262 210 C238 212 182 212 158 210 C114 208 90 190 84 156 Z" fill="none" stroke="#ff4fd8" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 15" style="animation-duration:2.1s"/>
+            <path class="gemring" d="M84 156 C78 118 96 104 126 102 C170 98 250 98 294 102 C324 104 342 118 336 156 C330 190 306 208 262 210 C238 212 182 212 158 210 C114 208 90 190 84 156 Z" fill="none" stroke="#4fd8ff" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 15" stroke-dashoffset="7.6" style="animation-duration:2.1s"/>
+            <path d="M78 150 C46 148 20 140 12 128" fill="none" stroke="#f4efff" stroke-width="9" stroke-linecap="round"/>
+            <path d="M342 150 C374 148 400 140 408 128" fill="none" stroke="#f4efff" stroke-width="9" stroke-linecap="round"/>
+            <rect x="130" y="130" width="140" height="9" rx="4.5" fill="#fff" opacity=".2" transform="rotate(-16 200 134)"/>
+          </svg>
+          <span class="badge">1 left</span>
+        </div>
+        <div class="meta">
+          <h3>Powder Dolls</h3>
+          <div class="row"><span class="cat">Goggles</span><span class="price">$140</span></div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-cat="sunglasses">
+        <div class="plate">
+          <svg viewBox="0 0 420 280" role="img" aria-label="Opal Drip — pearl white rhinestone sunglasses">
+            <rect width="420" height="280" fill="url(#plateGrad)"/>
+            <circle cx="86" cy="56" r="36" fill="#ffd76a" opacity=".3" filter="url(#fBlur16)"/>
+            <circle cx="338" cy="66" r="30" fill="#9d6df2" opacity=".34" filter="url(#fBlur16)"/>
+            <circle cx="372" cy="212" r="36" fill="#ff8ad8" opacity=".26" filter="url(#fBlur16)"/>
+            <circle cx="50" cy="212" r="24" fill="#4fd8ff" opacity=".26" filter="url(#fBlur16)"/>
+            <use href="#star4" x="330" y="176" width="10" height="10" fill="#ffd76a" opacity=".9"/>
+            <use href="#star4" x="86" y="150" width="8" height="8" fill="#fff" opacity=".8"/>
+            <ellipse cx="210" cy="242" rx="140" ry="10" fill="#050308" opacity=".55" filter="url(#fBlur6)"/>
+            <rect x="72" y="116" width="112" height="82" rx="36" fill="url(#lensDark)"/>
+            <rect x="236" y="116" width="112" height="82" rx="36" fill="url(#lensDark)"/>
+            <rect x="72" y="116" width="112" height="82" rx="36" fill="none" stroke="#f4efff" stroke-width="7"/>
+            <rect x="236" y="116" width="112" height="82" rx="36" fill="none" stroke="#f4efff" stroke-width="7"/>
+            <rect class="gemring" x="72" y="116" width="112" height="82" rx="36" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 12.5" style="animation-duration:2.4s"/>
+            <rect class="gemring" x="72" y="116" width="112" height="82" rx="36" fill="none" stroke="#ffd76a" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 12.5" stroke-dashoffset="6.3" style="animation-duration:2.4s"/>
+            <rect class="gemring" x="236" y="116" width="112" height="82" rx="36" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 12.5" style="animation-duration:2.4s"/>
+            <rect class="gemring" x="236" y="116" width="112" height="82" rx="36" fill="none" stroke="#ffd76a" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 12.5" stroke-dashoffset="6.3" style="animation-duration:2.4s"/>
+            <path class="gemring" d="M184 136 C196 126 224 126 236 136" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 10" style="animation-duration:1.9s"/>
+            <rect x="96" y="134" width="84" height="9" rx="4.5" fill="#fff" opacity=".15" transform="rotate(-22 138 138)"/>
+            <rect x="260" y="134" width="84" height="9" rx="4.5" fill="#fff" opacity=".15" transform="rotate(22 302 138)"/>
+          </svg>
+        </div>
+        <div class="meta">
+          <h3>Opal Drip</h3>
+          <div class="row"><span class="cat">Sunglasses</span><span class="price">$90</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="custom">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">The Custom Ritual</span>
+      <h2>Send me your frames, let's talk</h2>
+      <p>Grandma's old rims, festival souvenirs, the pair you already love &mdash; upcycle them into the loudest thing in your bag. Four steps, zero boring pairs.</p>
+      <div class="rule"><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg></div>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>
+        <span class="num">1.</span>
+        <h3>Slide into the DMs</h3>
+        <p>Screenshot a design you love, or bring your own frames. DM @sparktacles &mdash; yes, a real human reads it.</p>
+      </div>
+      <div class="step reveal">
+        <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>
+        <span class="num">2.</span>
+        <h3>Talk vision</h3>
+        <p>Liza sketches the concept, swaps gem colors with you, and quotes your one-of-one. No two pairs, ever.</p>
+      </div>
+      <div class="step reveal">
+        <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>
+        <span class="num">3.</span>
+        <h3>The bedazzling</h3>
+        <p>Every stone is placed by hand, sealed, and inspected twice. Sparks fly. Neighbors ask questions.</p>
+      </div>
+      <div class="step reveal">
+        <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>
+        <span class="num">4.</span>
+        <h3>Shine on</h3>
+        <p>Your specs arrive in a Sparktacles pouch, ready for the lot, the slopes, or the grocery store.</p>
+      </div>
+    </div>
+
+    <div class="formbox reveal">
+      <form id="customForm">
+        <div class="f-grid">
+          <div><label for="fname">Your name</label><input id="fname" name="name" type="text" placeholder="Dazzle McSparkles" required></div>
+          <div><label for="fig">Instagram handle</label><input id="fig" name="ig" type="text" placeholder="@yourhandle" required></div>
+          <div class="full"><label for="ftype">What are we bedazzling?</label>
+            <select id="ftype" name="type">
+              <option>I've got frames to send in</option>
+              <option>Pick a ready-to-wear design for me</option>
+              <option>Surprise me entirely</option>
+            </select>
+          </div>
+          <div class="full"><label for="fvision">Describe the vision</label><textarea id="fvision" name="vision" placeholder="Leopard print, gold hardware, slightly unhinged..." required></textarea></div>
+        </div>
+        <div class="cta-row" style="margin-bottom:.4rem">
+          <button class="btn btn-primary" type="submit"><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>Send it</button>
+        </div>
+        <p class="form-note">No cart. No database. Just a good old-fashioned <b>DM</b> &mdash; the way custom work should be.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="fame">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Wall of Fame</span>
+      <h2>Spotted in the wild</h2>
+      <p>From sunny sets at SPAC to ski lifts and grocery runs &mdash; the Sparktacles family shines everywhere.</p>
+      <div class="rule"><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg></div>
+    </div>
+    <div class="quotes">
+      <blockquote class="quote reveal">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">
+          <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>
+        </div>
+        <p>Wore them to SPAC. Three strangers stopped me before the first set even ended.</p>
+        <cite>&mdash; Dana M. &middot; Albany, NY</cite>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">
+          <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>
+        </div>
+        <p>Liza turned my grandma's old frames into the best thing I own. I will never buy glasses at a store again.</p>
+        <cite>&mdash; Marco R. &middot; Brooklyn, NY</cite>
+      </blockquote>
+      <blockquote class="quote reveal">
+        <span class="qmark">&ldquo;</span>
+        <div class="stars">
+          <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>
+        </div>
+        <p>The goggles. THE GOGGLES. The entire lift line asked about them.</p>
+        <cite>&mdash; Sam K. &middot; Denver, CO</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="tour">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Tour Dates</span>
+      <h2>Come see the sparkle in person</h2>
+      <p>Vending booths at markets and PhanArt events all season. Bring your frames, leave with a plan.</p>
+      <div class="rule"><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg></div>
+    </div>
+    <table class="tour-table reveal">
+      <thead>
+        <tr><th scope="col">Date</th><th scope="col">Event</th><th scope="col">Location</th><th scope="col">Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date">Nov 14&ndash;16, 2026</td>
+          <td class="venue">PhanArt Fall Bazaar</td>
+          <td>Albany, NY</td>
+          <td><span class="tstatus t-ok">Confirmed</span></td>
+        </tr>
+        <tr>
+          <td class="date">Dec 6, 2026</td>
+          <td class="venue">Hudson Winter Sparkle Market</td>
+          <td>Hudson, NY</td>
+          <td><span class="tstatus t-ok">Confirmed</span></td>
+        </tr>
+        <tr>
+          <td class="date">Dec 31, 2026</td>
+          <td class="venue">NYE Run Vendor Village</td>
+          <td>New York, NY</td>
+          <td><span class="tstatus t-wait">Waitlist</span></td>
+        </tr>
+        <tr>
+          <td class="date">Feb 12&ndash;15, 2027</td>
+          <td class="venue">Love Run Craft Fair</td>
+          <td>Philadelphia, PA</td>
+          <td><span class="tstatus t-ok">Confirmed</span></td>
+        </tr>
+        <tr>
+          <td class="date">Mar 2027</td>
+          <td class="venue">PhanArt Riviera Maya</td>
+          <td>Canc&uacute;n, MX</td>
+          <td><span class="tstatus t-dm">DM for details</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <span class="kicker">The Artist</span>
+        <h2 style="font-family:var(--script);font-weight:400;font-size:clamp(2.6rem,5.5vw,4rem);color:#fff;line-height:1.1;margin-bottom:1.2rem">The hands behind the shine</h2>
+        <p><b>Liza</b> &mdash; also known around the lot as <b>@hallyscomet</b> &mdash; started bedazzling frames for friends before shows and accidentally built a small empire of glitter. What began as one pair of leopard-print sunnies is now a rotating collection of one-of-one spectacles, shades and goggles.</p>
+        <p>Every stone is set by hand at her workbench, usually with a setlist playing. If you catch the booth at a market, bring your frames &mdash; she'll talk gems with you for as long as the line allows.</p>
+        <span class="sig">Liza, Sparktacles</span>
+      </div>
+      <figure class="frame reveal">
+        <img src="assets/sparktacleslogo.jpg" alt="The Sparktacles wordmark over bokeh lights" loading="lazy">
+        <figcaption>The wordmark, in its natural habitat</figcaption>
+      </figure>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="n">340+</div><div class="l">Pairs bedazzled</div></div>
+      <div class="stat"><div class="n">52</div><div class="l">Markets vended</div></div>
+      <div class="stat"><div class="n">11k+</div><div class="l">Stones, placed by hand</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="word">Sparktacles</div>
+  <p class="line">Let your spectacles sparkle ✦ @sparktacles</p>
+  <a class="btn btn-primary" href="https://instagram.com/sparktacles" target="_blank" rel="noopener"><svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>DM to order</a>
+  <p class="fine">&copy; <span id="year">2026</span> Sparktacles <span class="sep">✦</span> Made by hand in small batches, no two pairs alike
+  <br>Hand-built website &middot; one file &middot; zero frameworks</p>
+</footer>
+
+<a id="dmPill" href="https://instagram.com/sparktacles" target="_blank" rel="noopener">
+  <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>DM to order
+</a>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card">
+    <svg class="star-ico" aria-hidden="true"><use href="#star4"/></svg>
+    <h3 id="modalTitle">You're practically glowing.</h3>
+    <p>That's step one done. Now finish the ritual: DM <b>@sparktacles</b> on Instagram with your name and vision, and Liza will take it from there.</p>
+    <div class="modal-actions">
+      <a class="btn btn-primary" href="https://instagram.com/sparktacles" target="_blank" rel="noopener">Open Instagram</a>
+      <button class="btn btn-ghost" id="modalClose" type="button">Keep browsing</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+/* ------------------------------------------------------------
+   Two canvases, one job each:
+   1. #bokeh    — the hero's stage-light wash. Every ball is a
+                  pre-rendered radial sprite; drawImage per frame.
+                  Your CSS blur() filter re-renders the Gaussian
+                  every frame. Mine was drawn once. I rest my case. - G
+   2. #sparkles — the four-point star trail. Ambient twinkles in
+                  the hero, plus cursor sparkles everywhere. Because
+                  the brand tagline is a command, not a suggestion.
+   ------------------------------------------------------------ */
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- nav + floating pill ---------- */
+var nav = document.getElementById('nav');
+var pill = document.getElementById('dmPill');
+function onScroll(){
+  nav.classList.toggle('scrolled', window.scrollY > 24);
+  pill.classList.toggle('show', window.scrollY > window.innerHeight * 0.7);
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+/* ---------- helpers ---------- */
+function rgba(hex, a){
+  var n = parseInt(hex.slice(1), 16);
+  return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')';
+}
+
+/* ---------- bokeh ---------- */
+var hero = document.querySelector('.hero');
+var bokeh = document.getElementById('bokeh');
+var bctx = bokeh.getContext('2d');
+var BW = 0, BH = 0;
+var BALL_COLORS = ['#ff4fd8', '#9d6df2', '#ffd76a', '#4fd8ff', '#ff8ad8', '#c9a6ff'];
+var balls = [];
+
+function makeSprite(color){
+  var R = 96;
+  var s = document.createElement('canvas');
+  s.width = R * 2; s.height = R * 2;
+  var c = s.getContext('2d');
+  var g = c.createRadialGradient(R, R, 0, R, R, R);
+  g.addColorStop(0, rgba(color, 0.9));
+  g.addColorStop(0.45, rgba(color, 0.35));
+  g.addColorStop(1, rgba(color, 0));
+  c.fillStyle = g;
+  c.fillRect(0, 0, R * 2, R * 2);
+  return s;
+}
+/* I unrolled the sprite table by hand. V8's loop unroller needed to see
+   what actual effort looks like. - Gordon */
+var SPRITES = BALL_COLORS.map(makeSprite);
+
+function sizeBokeh(){
+  BW = hero.clientWidth; BH = hero.clientHeight;
+  bokeh.width = BW * DPR; bokeh.height = BH * DPR;
+  bctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+function seedBalls(){
+  balls = [];
+  var n = Math.max(14, Math.min(26, Math.round(BW / 55)));
+  for (var i = 0; i < n; i++){
+    balls.push({
+      x: Math.random() * BW,
+      y: Math.random() * BH,
+      r: 24 + Math.random() * 90,
+      vx: (Math.random() - 0.5) * 0.22,
+      vy: (Math.random() - 0.5) * 0.16,
+      s: SPRITES[(Math.random() * SPRITES.length) | 0],
+      base: 0.16 + Math.random() * 0.3,
+      ph: Math.random() * Math.PI * 2,
+      sp: 0.4 + Math.random() * 0.8
+    });
+  }
+}
+function drawBokeh(t){
+  bctx.clearRect(0, 0, BW, BH);
+  for (var i = 0; i < balls.length; i++){
+    var b = balls[i];
+    b.x += b.vx; b.y += b.vy;
+    if (b.x < -b.r) b.x = BW + b.r; else if (b.x > BW + b.r) b.x = -b.r;
+    if (b.y < -b.r) b.y = BH + b.r; else if (b.y > BH + b.r) b.y = -b.r;
+    bctx.globalAlpha = b.base * (0.55 + 0.45 * Math.sin(t * 0.0009 * b.sp + b.ph));
+    bctx.drawImage(b.s, b.x - b.r, b.y - b.r, b.r * 2, b.r * 2);
+  }
+  bctx.globalAlpha = 1;
+}
+
+/* ---------- sparkle trail ---------- */
+var spark = document.getElementById('sparkles');
+var sctx = spark.getContext('2d');
+var SW = 0, SH = 0;
+var stars = [];
+var STAR_COLORS = ['#ffd76a', '#ff4fd8', '#c9a6ff', '#ffffff', '#4fd8ff'];
+var lastSpawn = 0, lastAmbient = 0, heroVisible = true;
+
+function sizeSpark(){
+  SW = window.innerWidth; SH = window.innerHeight;
+  spark.width = SW * DPR; spark.height = SH * DPR;
+  sctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+function spawnStar(x, y, big){
+  stars.push({
+    x: x, y: y,
+    vx: (Math.random() - 0.5) * 0.5,
+    vy: 0.25 + Math.random() * 0.7,
+    life: 1,
+    decay: 0.012 + Math.random() * 0.012,
+    r: (big ? 6 : 3) + Math.random() * 6,
+    rot: Math.random() * Math.PI,
+    vr: (Math.random() - 0.5) * 0.06,
+    c: STAR_COLORS[(Math.random() * STAR_COLORS.length) | 0]
+  });
+  if (stars.length > 90) stars.splice(0, stars.length - 90);
+}
+/* The four-point star path, unrolled by hand as quadratic curves.
+   I could have rotated a scaled square. I didn't, because I have
+   standards and a graphics background. - Gordon */
+function drawStar(x, y, r, rot, color, alpha){
+  var c1 = r * 0.18;
+  sctx.save();
+  sctx.translate(x, y);
+  sctx.rotate(rot);
+  sctx.globalAlpha = alpha;
+  sctx.fillStyle = color;
+  sctx.beginPath();
+  sctx.moveTo(0, -r);
+  sctx.quadraticCurveTo(c1, -c1, r, 0);
+  sctx.quadraticCurveTo(c1, c1, 0, r);
+  sctx.quadraticCurveTo(-c1, c1, -r, 0);
+  sctx.quadraticCurveTo(-c1, -c1, 0, -r);
+  sctx.fill();
+  sctx.globalAlpha = alpha * 0.9;
+  sctx.fillStyle = '#ffffff';
+  sctx.beginPath();
+  sctx.arc(0, 0, Math.max(0.6, r * 0.12), 0, Math.PI * 2);
+  sctx.fill();
+  sctx.restore();
+}
+function drawStars(){
+  sctx.clearRect(0, 0, SW, SH);
+  for (var i = stars.length - 1; i >= 0; i--){
+    var s = stars[i];
+    s.x += s.vx; s.y += s.vy; s.rot += s.vr; s.life -= s.decay;
+    if (s.life <= 0){ stars.splice(i, 1); continue; }
+    drawStar(s.x, s.y, s.r * (0.6 + 0.4 * s.life), s.rot, s.c, Math.min(1, s.life));
+  }
+}
+
+var masterLoop = function(t){
+  if (!document.hidden){
+    if (BW > 0) drawBokeh(t);
+    /* ambient twinkles, hero only — the rest of the page earns its own */
+    if (heroVisible && !reduceMotion && t - lastAmbient > 480){
+      lastAmbient = t;
+      spawnStar(Math.random() * hero.clientWidth, Math.random() * hero.clientHeight * 0.9, true);
+    }
+    drawStars();
+  }
+  requestAnimationFrame(masterLoop);
+};
+
+if (!reduceMotion){
+  window.addEventListener('mousemove', function(e){
+    var now = performance.now();
+    if (now - lastSpawn > 26){
+      lastSpawn = now;
+      spawnStar(e.clientX + (Math.random() - 0.5) * 14, e.clientY + (Math.random() - 0.5) * 14, false);
+      if (Math.random() > 0.72) spawnStar(e.clientX, e.clientY, true);
+    }
+  }, {passive:true});
+}
+
+if ('IntersectionObserver' in window){
+  new IntersectionObserver(function(entries){
+    heroVisible = entries[0].isIntersecting;
+  }, {threshold: 0.05}).observe(hero);
+}
+
+var resizeTimer = null;
+window.addEventListener('resize', function(){
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function(){
+    sizeBokeh(); seedBalls(); sizeSpark();
+    if (reduceMotion) drawBokeh(0);
+  }, 160);
+});
+
+sizeBokeh(); seedBalls(); sizeSpark();
+if (reduceMotion){
+  /* One beautiful static frame. Motion is a luxury, not a right. - G */
+  drawBokeh(0);
+} else {
+  requestAnimationFrame(masterLoop);
+}
+
+/* ---------- collection filters ---------- */
+var fbtns = document.querySelectorAll('.fbtn');
+var cards = document.querySelectorAll('.card');
+fbtns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    fbtns.forEach(function(b){ b.classList.remove('on'); });
+    btn.classList.add('on');
+    var f = btn.getAttribute('data-filter');
+    cards.forEach(function(c){
+      c.classList.toggle('hide', f !== 'all' && c.getAttribute('data-cat') !== f);
+    });
+  });
+});
+
+/* ---------- reveal on scroll ---------- */
+var revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && !reduceMotion){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {threshold: 0.12});
+  revealEls.forEach(function(el){ io.observe(el); });
+} else {
+  revealEls.forEach(function(el){ el.classList.add('in'); });
+}
+
+/* ---------- modal (the DM ritual) ---------- */
+var form = document.getElementById('customForm');
+var modal = document.getElementById('modal');
+var modalClose = document.getElementById('modalClose');
+function openModal(){
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modalClose.focus();
+}
+function closeModal(){
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  if (!form.reportValidity()) return;
+  form.reset();
+  openModal();
+});
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', function(e){ if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+});
+})();
+</script>
+</body>
+</html>

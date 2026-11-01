@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparktacles — The Archive of One-of-One Eyewear</title>
+  <meta name="description" content="Sparktacles is hand-set rhinestone eyewear by artist Liza. Numbered, one-of-one pieces — sunglasses, spectacles, novelty frames and goggles. Claim a pair or commission your own through Instagram DMs.">
+  <meta name="theme-color" content="#0b0713">
+  <meta property="og:title" content="Sparktacles — The Archive of One-of-One Eyewear">
+  <meta property="og:description" content="Hand-set rhinestone eyewear. Every piece is numbered, one of one, never reproduced. DM @sparktacles to claim or commission.">
+  <meta property="og:image" content="assets/sparktacleslogo.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/jpeg" href="assets/sparktaclesicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#collection">Skip to the collection</a>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a class="brand" href="#marquee" aria-label="Sparktacles — back to top">
+        <img class="brand__icon" src="assets/sparktaclesicon.jpg" alt="" width="40" height="40">
+        <span class="brand__word">Sparktacles</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="#collection">Collection</a>
+        <a class="nav__link" href="#commission">Commission</a>
+        <a class="nav__link" href="#sightings">Sightings</a>
+        <a class="nav__link" href="#tour">Tour</a>
+        <a class="nav__link" href="#about">The Curator</a>
+      </nav>
+      <a class="ig-pill" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">DM @sparktacles</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Mobile">
+      <a href="#collection" class="mobile-menu__link">The Collection</a>
+      <a href="#commission" class="mobile-menu__link">Commission</a>
+      <a href="#sightings" class="mobile-menu__link">Sightings</a>
+      <a href="#tour" class="mobile-menu__link">Tour</a>
+      <a href="#about" class="mobile-menu__link">The Curator</a>
+      <a href="https://ig.me/m/sparktacles" class="mobile-menu__link mobile-menu__link--cta" target="_blank" rel="noopener">DM @sparktacles</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ================= Marquee (hero) ================= -->
+    <section class="hero" id="marquee">
+      <div class="hero__beam hero__beam--a" aria-hidden="true"></div>
+      <div class="hero__beam hero__beam--b" aria-hidden="true"></div>
+      <div class="hero__halo" aria-hidden="true"></div>
+
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow hero__eyebrow">The archive of one-of-one eyewear</p>
+          <h1 class="hero__title">Let your spectacles <span class="hero__spell">sparkle!</span></h1>
+          <p class="hero__lede">Rhinestones, gems and pure joy — placed by hand, one at a time, by artist <b>Liza</b>. Every pair is numbered, catalogued, and never reproduced. When one is claimed, it retires to the archive.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#collection">Browse the collection</a>
+            <a class="btn btn--ghost" href="#commission">Commission a pair</a>
+          </div>
+          <p class="hero__note">Every order happens in the DMs. First message claims the piece. <a href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">@sparktacles</a></p>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <svg viewBox="0 0 520 400" role="img" aria-label="The house pair: a gold rhinestone cat-eye frame on a velvet pedestal, lit by a spotlight">
+            <defs>
+              <radialGradient id="hh-spot" cx=".5" cy=".32" r=".75">
+                <stop offset="0" stop-color="#ffd166" stop-opacity=".30"/>
+                <stop offset=".6" stop-color="#8b5cf6" stop-opacity=".12"/>
+                <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="hh-velvet" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1a1130"/>
+                <stop offset="1" stop-color="#0b0713"/>
+              </linearGradient>
+              <linearGradient id="hh-lens" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#4a2a10"/>
+                <stop offset="1" stop-color="#241203"/>
+              </linearGradient>
+              <filter id="hh-glow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="6"/>
+              </filter>
+            </defs>
+            <rect width="520" height="400" fill="url(#hh-velvet)"/>
+            <rect width="520" height="400" fill="url(#hh-spot)"/>
+            <ellipse cx="260" cy="330" rx="250" ry="34" fill="#ffd166" opacity=".05"/>
+            <g>
+              <rect x="96" y="322" width="328" height="12" rx="6" fill="#221741"/>
+              <rect x="96" y="322" width="328" height="3" rx="1.5" fill="#ffd166" opacity=".35"/>
+            </g>
+            <ellipse cx="260" cy="336" rx="118" ry="10" fill="#05030a" opacity=".7"/>
+
+            <g id="hh-lens-group">
+              <path d="M148 128 C196 108 258 114 280 138 C300 160 292 192 262 208 C224 228 178 226 150 202 C126 182 118 152 148 128 Z" fill="url(#hh-lens)" stroke="#2a1806" stroke-width="10"/>
+              <path d="M148 128 C196 108 258 114 280 138 C300 160 292 192 262 208 C224 228 178 226 150 202 C126 182 118 152 148 128 Z" fill="none" stroke="#ffd166" stroke-width="8" stroke-linecap="round" stroke-dasharray="0.1 24"/>
+              <path d="M148 128 C196 108 258 114 280 138 C300 160 292 192 262 208 C224 228 178 226 150 202 C126 182 118 152 148 128 Z" fill="none" stroke="#fff6e0" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 24" stroke-dashoffset="12"/>
+              <path d="M150 150 C170 140 210 138 236 150" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity=".18"/>
+            </g>
+            <g filter="url(#hh-glow)" opacity=".9">
+              <path class="tw" transform="translate(356 96) scale(.9)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffd166"/>
+              <path class="tw" style="animation-delay:.9s" transform="translate(130 64) scale(.6)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ff6ec7"/>
+            </g>
+            <circle class="tw" style="animation-delay:1.6s" cx="404" cy="232" r="3" fill="#ffffff"/>
+            <circle class="tw" style="animation-delay:.5s" cx="104" cy="250" r="2.4" fill="#ffd166"/>
+            <circle class="tw" style="animation-delay:2.1s" cx="436" cy="160" r="2" fill="#a78bfa"/>
+
+            <use href="#hh-lens-group" transform="translate(520 0) scale(-1 1)"/>
+            <path d="M142 160 Q 260 240 378 160" fill="none" stroke="#a78bfa" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+            <path d="M142 160 Q 260 240 378 160" fill="none" stroke="#ffd166" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0.1 12" opacity=".95"/>
+            <path d="M120 168 L84 146" stroke="#2a1806" stroke-width="10" stroke-linecap="round"/>
+            <path d="M400 168 L436 146" stroke="#2a1806" stroke-width="10" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Catalog index strip -->
+      <div class="hero__index" aria-label="Collection index">
+        <a href="#case-fr"><span class="idx__no">№ 01</span><span class="idx__name">Free Range Leopard</span></a>
+        <a href="#case-sr"><span class="idx__no">№ 02</span><span class="idx__name">Sunday Rainbow</span></a>
+        <a href="#case-oo"><span class="idx__no">№ 03</span><span class="idx__name">Office Oracle</span></a>
+        <a href="#case-ea"><span class="idx__no">№ 04</span><span class="idx__name">Eyes Above</span></a>
+        <a href="#case-ll"><span class="idx__no">№ 05</span><span class="idx__name">Lift Line Legend</span></a>
+        <a href="#case-hg"><span class="idx__no">№ 06</span><span class="idx__name">Heart of Gold</span></a>
+        <a class="idx__cta" href="#commission"><span class="idx__no">+&thinsp;07</span><span class="idx__name">Your frame — next exhibit</span></a>
+      </div>
+    </section>
+
+    <!-- ================= Ticker ================= -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>one of one &middot; never reproduced</span><span class="ticker__dot">✦</span>
+        <span>set by hand, one stone at a time</span><span class="ticker__dot">✦</span>
+        <span>first DM wins the piece</span><span class="ticker__dot">✦</span>
+        <span>let your spectacles sparkle</span><span class="ticker__dot">✦</span>
+        <span>one of one &middot; never reproduced</span><span class="ticker__dot">✦</span>
+        <span>set by hand, one stone at a time</span><span class="ticker__dot">✦</span>
+        <span>first DM wins the piece</span><span class="ticker__dot">✦</span>
+        <span>let your spectacles sparkle</span><span class="ticker__dot">✦</span>
+      </div>
+    </div>
+
+    <!-- ================= Collection ================= -->
+    <section class="section" id="collection">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal>The display case</p>
+          <h2 class="poster" data-reveal>Six one-of-one, on display</h2>
+          <p class="lede" data-reveal>Each exhibit is a single edition — never reproduced, never re-issued. See one you love? DM <b>@sparktacles</b> to claim it before it retires to the archive.</p>
+        </header>
+
+        <div class="filters" role="group" aria-label="Filter the collection" data-reveal>
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All exhibits</button>
+          <button class="filter" type="button" data-filter="sunglasses" aria-pressed="false">Sunglasses</button>
+          <button class="filter" type="button" data-filter="spectacles" aria-pressed="false">Spectacles</button>
+          <button class="filter" type="button" data-filter="goggles" aria-pressed="false">Goggles</button>
+          <button class="filter" type="button" data-filter="novelty" aria-pressed="false">Novelty</button>
+        </div>
+        <p class="filters__count" data-reveal id="filterCount" aria-live="polite">Showing all 6 exhibits</p>
+
+        <div class="cases">
+
+          <!-- ============ Case 01 · Free Range Leopard ============ -->
+          <article class="case case--feature" id="case-fr" data-cat="sunglasses" data-reveal>
+            <div class="case__art case__art--432">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Free Range Leopard — cat-eye sunglasses with honey and chocolate leopard-print rhinestones">
+                <defs>
+                  <radialGradient id="fr-spot" cx=".5" cy=".34" r=".75">
+                    <stop offset="0" stop-color="#ffd166" stop-opacity=".22"/>
+                    <stop offset="1" stop-color="#ffd166" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="fr-velvet" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#1a1130"/>
+                    <stop offset="1" stop-color="#0b0713"/>
+                  </linearGradient>
+                  <linearGradient id="fr-lens" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#f2a23c" stop-opacity=".66"/>
+                    <stop offset="1" stop-color="#c26a13" stop-opacity=".78"/>
+                  </linearGradient>
+                  <clipPath id="fr-clip"><path d="M118 126 C164 108 232 112 254 136 C272 156 262 186 236 202 C202 222 156 220 130 196 C108 176 96 150 118 126 Z"/></clipPath>
+                </defs>
+                <rect width="480" height="400" fill="url(#fr-velvet)"/>
+                <rect width="480" height="400" fill="url(#fr-spot)"/>
+                <ellipse cx="240" cy="332" rx="210" ry="26" fill="#ffd166" opacity=".05"/>
+                <rect x="78" y="324" width="324" height="11" rx="5.5" fill="#221741"/>
+                <rect x="78" y="324" width="324" height="2.6" rx="1.3" fill="#ffd166" opacity=".3"/>
+                <ellipse cx="240" cy="337" rx="112" ry="9" fill="#05030a" opacity=".7"/>
+
+                <g id="fr-lens-group">
+                  <path d="M118 126 C164 108 232 112 254 136 C272 156 262 186 236 202 C202 222 156 220 130 196 C108 176 96 150 118 126 Z" fill="url(#fr-lens)"/>
+                  <g clip-path="url(#fr-clip)">
+                    <circle cx="152" cy="146" r="9" fill="#3a2410"/>
+                    <circle cx="196" cy="132" r="7" fill="#3a2410"/>
+                    <circle cx="226" cy="158" r="10" fill="#3a2410"/>
+                    <circle cx="170" cy="176" r="8" fill="#3a2410"/>
+                    <circle cx="136" cy="170" r="6" fill="#3a2410"/>
+                    <circle cx="210" cy="188" r="7" fill="#3a2410"/>
+                    <circle cx="182" cy="152" r="4" fill="#ffe6b8" opacity=".8"/>
+                    <circle cx="148" cy="132" r="2.6" fill="#fff" opacity=".8"/>
+                    <circle cx="228" cy="168" r="2.2" fill="#fff" opacity=".6"/>
+                  </g>
+                  <path d="M118 126 C164 108 232 112 254 136 C272 156 262 186 236 202 C202 222 156 220 130 196 C108 176 96 150 118 126 Z" fill="none" stroke="#3a2410" stroke-width="9"/>
+                  <path d="M118 126 C164 108 232 112 254 136 C272 156 262 186 236 202 C202 222 156 220 130 196 C108 176 96 150 118 126 Z" fill="none" stroke="#ffd166" stroke-width="6.4" stroke-linecap="round" stroke-dasharray="0.1 20"/>
+                  <path d="M118 126 C164 108 232 112 254 136 C272 156 262 186 236 202 C202 222 156 220 130 196 C108 176 96 150 118 126 Z" fill="none" stroke="#fff6e0" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 20" stroke-dashoffset="10"/>
+                  <path d="M128 152 C146 142 182 138 212 146" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity=".16"/>
+                </g>
+                <use href="#fr-lens-group" transform="translate(480 0) scale(-1 1)"/>
+                <path d="M244 150 Q 260 166 268 150" fill="none" stroke="#3a2410" stroke-width="10" stroke-linecap="round" transform="translate(240 0)"/>
+                <path d="M238 152 Q 240 168 250 158" fill="none" stroke="#3a2410" stroke-width="6" stroke-linecap="round"/>
+                <path d="M244 150 Q 268 162 268 150" fill="none" stroke="#ffd166" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="0.1 9" transform="translate(0 0)"/>
+                <path d="M96 160 L58 138" stroke="#3a2410" stroke-width="9" stroke-linecap="round"/>
+                <path d="M384 160 L422 138" stroke="#3a2410" stroke-width="9" stroke-linecap="round"/>
+                <path class="tw" transform="translate(386 92) scale(.8)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffd166"/>
+                <path class="tw" style="animation-delay:1.1s" transform="translate(112 84) scale(.55)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ff6ec7"/>
+              </svg>
+            </div>
+            <div class="case__plate">
+              <div class="case__kicker"><span class="case__no">№ 01</span><span class="case__cat">Sunglasses</span></div>
+              <h3 class="case__name">Free Range Leopard</h3>
+              <p class="case__tag">Honey &amp; chocolate rhinestones on an oversized cat-eye. Spotted twice at a SPAC lot, then retired:</p>
+              <div class="case__foot">
+                <span class="case__price">$85</span>
+                <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============ Case 02 · Sunday Rainbow ============ -->
+          <article class="case case--half" id="case-sr" data-cat="sunglasses" data-reveal>
+            <div class="case__art case__art--12">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Sunday Rainbow — oversized round sunglasses with a triple rainbow rhinestone rim">
+                <defs>
+                  <radialGradient id="sr-spot" cx=".5" cy=".36" r=".75">
+                    <stop offset="0" stop-color="#ff6ec7" stop-opacity=".18"/>
+                    <stop offset="1" stop-color="#ff6ec7" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="sr-velvet" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#221036"/>
+                    <stop offset="1" stop-color="#0b0713"/>
+                  </linearGradient>
+                  <radialGradient id="sr-lens" cx=".5" cy=".4" r=".8">
+                    <stop offset="0" stop-color="#2c1d54"/>
+                    <stop offset="1" stop-color="#140b28"/>
+                  </radialGradient>
+                </defs>
+                <rect width="480" height="400" fill="url(#sr-velvet)"/>
+                <rect width="480" height="400" fill="url(#sr-spot)"/>
+                <ellipse cx="240" cy="332" rx="210" ry="26" fill="#ff6ec7" opacity=".05"/>
+                <rect x="78" y="324" width="324" height="11" rx="5.5" fill="#221741"/>
+                <rect x="78" y="324" width="324" height="2.6" rx="1.3" fill="#ff6ec7" opacity=".3"/>
+                <ellipse cx="240" cy="337" rx="112" ry="9" fill="#05030a" opacity=".7"/>
+
+                <g id="sr-lens-group">
+                  <circle cx="170" cy="186" r="62" fill="url(#sr-lens)"/>
+                  <circle cx="170" cy="186" r="67" fill="none" stroke="#ff6ec7" stroke-width="9" stroke-linecap="round" stroke-dasharray="0.1 24"/>
+                  <circle cx="170" cy="186" r="67" fill="none" stroke="#ffd166" stroke-width="9" stroke-linecap="round" stroke-dasharray="0.1 24" stroke-dashoffset="12"/>
+                  <circle cx="170" cy="186" r="67" fill="none" stroke="#4dc9ff" stroke-width="9" stroke-linecap="round" stroke-dasharray="0.1 24" stroke-dashoffset="24"/>
+                  <circle cx="150" cy="166" r="12" fill="#fff" opacity=".12"/>
+                  <circle cx="142" cy="158" r="4" fill="#fff" opacity=".85"/>
+                </g>
+                <use href="#sr-lens-group" transform="translate(480 0) scale(-1 1)"/>
+                <path d="M232 170 Q 240 158 248 170" fill="none" stroke="#2a1b40" stroke-width="9" stroke-linecap="round"/>
+                <path d="M232 170 Q 240 158 248 170" fill="none" stroke="#ff6ec7" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8"/>
+                <path d="M108 180 L70 156" stroke="#2a1b40" stroke-width="9" stroke-linecap="round"/>
+                <path d="M372 180 L410 156" stroke="#2a1b40" stroke-width="9" stroke-linecap="round"/>
+                <path class="tw" transform="translate(386 118) scale(.75)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#4dc9ff"/>
+                <path class="tw" style="animation-delay:1.4s" transform="translate(118 92) scale(.6)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffd166"/>
+              </svg>
+            </div>
+            <div class="case__plate">
+              <div class="case__kicker"><span class="case__no">№ 02</span><span class="case__cat">Sunglasses</span></div>
+              <h3 class="case__name">Sunday Rainbow</h3>
+              <p class="case__tag">Oversized round frames with a triple rainbow rim — pink, gold, blue, in rotation.</p>
+              <div class="case__foot">
+                <span class="case__price">$95</span>
+                <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============ Case 03 · Office Oracle ============ -->
+          <article class="case" id="case-oo" data-cat="spectacles" data-reveal>
+            <div class="case__art case__art--12">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Office Oracle — everyday prescription glasses with crystal white and pink rhinestone rims">
+                <defs>
+                  <radialGradient id="oo-spot" cx=".5" cy=".36" r=".75">
+                    <stop offset="0" stop-color="#a78bfa" stop-opacity=".2"/>
+                    <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="oo-velvet" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#1a1540"/>
+                    <stop offset="1" stop-color="#0b0713"/>
+                  </linearGradient>
+                  <linearGradient id="oo-lens" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#3a2b68" stop-opacity=".55"/>
+                    <stop offset="1" stop-color="#1c1440" stop-opacity=".75"/>
+                  </linearGradient>
+                </defs>
+                <rect width="480" height="400" fill="url(#oo-velvet)"/>
+                <rect width="480" height="400" fill="url(#oo-spot)"/>
+                <ellipse cx="240" cy="332" rx="210" ry="26" fill="#a78bfa" opacity=".05"/>
+                <rect x="78" y="324" width="324" height="11" rx="5.5" fill="#221741"/>
+                <rect x="78" y="324" width="324" height="2.6" rx="1.3" fill="#a78bfa" opacity=".3"/>
+                <ellipse cx="240" cy="337" rx="112" ry="9" fill="#05030a" opacity=".7"/>
+
+                <g id="oo-frame">
+                  <rect x="128" y="158" width="102" height="76" rx="30" fill="url(#oo-lens)"/>
+                  <g>
+                    <rect x="128" y="158" width="102" height="76" rx="30" fill="none" stroke="#f4e9ff" stroke-width="8"/>
+                    <rect x="128" y="158" width="102" height="76" rx="30" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 12"/>
+                    <rect x="128" y="158" width="102" height="76" rx="30" fill="none" stroke="#ff6ec7" stroke-width="4" stroke-linecap="round" stroke-dasharray="0.1 12" stroke-dashoffset="6"/>
+                    <path d="M146 172 L168 164" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".14"/>
+                  </g>
+                </g>
+                <use href="#oo-frame" transform="translate(480 0) scale(-1 1)"/>
+                <path d="M230 166 Q 240 156 250 166" fill="none" stroke="#f4e9ff" stroke-width="8" stroke-linecap="round"/>
+                <path d="M230 166 Q 240 156 250 166" fill="none" stroke="#ff6ec7" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8"/>
+                <path d="M122 174 L84 156" stroke="#cbb7ff" stroke-width="7" stroke-linecap="round"/>
+                <path d="M358 174 L396 156" stroke="#cbb7ff" stroke-width="7" stroke-linecap="round"/>
+                <path class="tw" transform="translate(392 120) scale(.6)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffffff"/>
+                <path class="tw" style="animation-delay:1.8s" transform="translate(102 96) scale(.5)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ff6ec7"/>
+              </svg>
+            </div>
+            <div class="case__plate">
+              <div class="case__kicker"><span class="case__no">№ 03</span><span class="case__cat">Spectacles</span></div>
+              <h3 class="case__name">Office Oracle</h3>
+              <p class="case__tag">Your everyday prescription frames — crystal and pink. Yes, the board meeting sparkles.</p>
+              <div class="case__foot">
+                <span class="case__price">$115</span>
+                <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============ Case 04 · Eyes Above ============ -->
+          <article class="case" id="case-ea" data-cat="novelty" data-reveal>
+            <div class="case__art case__art--12">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Eyes Above — novelty third-eye sunglasses with gold and violet rhinestones">
+                <defs>
+                  <radialGradient id="ea-spot" cx=".5" cy=".3" r=".8">
+                    <stop offset="0" stop-color="#ffd166" stop-opacity=".2"/>
+                    <stop offset="1" stop-color="#ffd166" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="ea-velvet" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#1f1138"/>
+                    <stop offset="1" stop-color="#0b0713"/>
+                  </linearGradient>
+                  <radialGradient id="ea-glass" cx=".5" cy=".4" r=".8">
+                    <stop offset="0" stop-color="#3a2465"/>
+                    <stop offset="1" stop-color="#180f30"/>
+                  </radialGradient>
+                </defs>
+                <rect width="480" height="400" fill="url(#ea-velvet)"/>
+                <rect width="480" height="400" fill="url(#ea-spot)"/>
+                <ellipse cx="240" cy="334" rx="210" ry="26" fill="#ffd166" opacity=".05"/>
+                <rect x="78" y="326" width="324" height="11" rx="5.5" fill="#221741"/>
+                <rect x="78" y="326" width="324" height="2.6" rx="1.3" fill="#ffd166" opacity=".3"/>
+                <ellipse cx="240" cy="339" rx="112" ry="9" fill="#05030a" opacity=".7"/>
+
+                <g id="ea-lens">
+                  <circle cx="156" cy="240" r="52" fill="url(#ea-glass)"/>
+                  <circle cx="156" cy="240" r="57" fill="none" stroke="#ffd166" stroke-width="8" stroke-linecap="round" stroke-dasharray="0.1 19"/>
+                  <circle cx="156" cy="240" r="57" fill="none" stroke="#b388ff" stroke-width="8" stroke-linecap="round" stroke-dasharray="0.1 19" stroke-dashoffset="9.5"/>
+                  <circle cx="140" cy="224" r="4" fill="#fff" opacity=".85"/>
+                </g>
+                <use href="#ea-lens" transform="translate(480 0) scale(-1 1)"/>
+                <circle cx="240" cy="156" r="24" fill="#2c1d54" stroke="#241741" stroke-width="7"/>
+                <circle cx="240" cy="156" r="24" fill="none" stroke="#ffd166" stroke-width="6" stroke-linecap="round" stroke-dasharray="0.1 12"/>
+                <circle cx="240" cy="156" r="9" fill="#ffd166"/>
+                <circle cx="243" cy="153" r="3" fill="#fff" opacity=".9"/>
+                <path d="M208 116 L272 116" stroke="#241741" stroke-width="11" stroke-linecap="round"/>
+                <path d="M208 116 L272 116" stroke="#ffd166" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="0.1 9"/>
+                <path d="M206 220 Q 240 170 274 220" fill="none" stroke="#241741" stroke-width="9" stroke-linecap="round"/>
+                <path d="M108 226 L66 202" stroke="#241741" stroke-width="9" stroke-linecap="round"/>
+                <path d="M372 226 L414 202" stroke="#241741" stroke-width="9" stroke-linecap="round"/>
+                <path class="tw" transform="translate(394 108) scale(.7)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffd166"/>
+                <path class="tw" style="animation-delay:1.3s" transform="translate(120 84) scale(.55)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#b388ff"/>
+              </svg>
+            </div>
+            <div class="case__plate">
+              <div class="case__kicker"><span class="case__no">№ 04</span><span class="case__cat">Novelty</span></div>
+              <h3 class="case__name">Eyes Above</h3>
+              <p class="case__tag">Gold and violet third-eye frame. Opens doors, starts conversations, sees everything.</p>
+              <div class="case__foot">
+                <span class="case__price">$78</span>
+                <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============ Case 05 · Lift Line Legend ============ -->
+          <article class="case" id="case-ll" data-cat="goggles" data-reveal>
+            <div class="case__art case__art--12">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Lift Line Legend — gem-covered ski goggles with a blue all-seeing eye motif">
+                <defs>
+                  <radialGradient id="ll-spot" cx=".5" cy=".34" r=".8">
+                    <stop offset="0" stop-color="#4dc9ff" stop-opacity=".2"/>
+                    <stop offset="1" stop-color="#4dc9ff" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="ll-velvet" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#102a3d"/>
+                    <stop offset="1" stop-color="#0b0713"/>
+                  </linearGradient>
+                </defs>
+                <rect width="480" height="400" fill="url(#ll-velvet)"/>
+                <rect width="480" height="400" fill="url(#ll-spot)"/>
+                <ellipse cx="240" cy="336" rx="210" ry="26" fill="#4dc9ff" opacity=".05"/>
+                <rect x="78" y="328" width="324" height="11" rx="5.5" fill="#221741"/>
+                <rect x="78" y="328" width="324" height="2.6" rx="1.3" fill="#4dc9ff" opacity=".3"/>
+                <ellipse cx="240" cy="341" rx="112" ry="9" fill="#05030a" opacity=".7"/>
+
+                <path d="M46 190 L76 176" stroke="#f4efff" stroke-width="10" stroke-linecap="round"/>
+                <path d="M434 190 L404 176" stroke="#f4efff" stroke-width="10" stroke-linecap="round"/>
+                <path d="M88 150 C84 118 100 106 128 104 C170 100 310 100 352 104 C380 106 396 118 392 150 C388 184 366 204 322 206 C298 207 182 207 158 206 C114 204 92 184 88 150 Z" fill="#182642" stroke="#f4efff" stroke-width="10"/>
+                <path d="M88 150 C84 118 100 106 128 104 C170 100 310 100 352 104 C380 106 396 118 392 150 C388 184 366 204 322 206 C298 207 182 207 158 206 C114 204 92 184 88 150 Z" fill="none" stroke="#4dc9ff" stroke-width="6" stroke-linecap="round" stroke-dasharray="0.1 17"/>
+                <path d="M88 150 C84 118 100 106 128 104 C170 100 310 100 352 104 C380 106 396 118 392 150 C388 184 366 204 322 206 C298 207 182 207 158 206 C114 204 92 184 88 150 Z" fill="none" stroke="#ffd166" stroke-width="6" stroke-linecap="round" stroke-dasharray="0.1 17" stroke-dashoffset="8.5"/>
+
+                <g>
+                  <path d="M204 128 Q 198 104 186 92" stroke="#4dc9ff" stroke-width="5" stroke-linecap="round" fill="none"/>
+                  <path d="M226 122 Q 224 98 216 82" stroke="#4dc9ff" stroke-width="5" stroke-linecap="round" fill="none"/>
+                  <path d="M248 122 Q 252 98 248 84" stroke="#4dc9ff" stroke-width="5" stroke-linecap="round" fill="none"/>
+                  <circle cx="186" cy="90" r="3.4" fill="#ffd166"/>
+                  <circle cx="216" cy="80" r="3.4" fill="#ffd166"/>
+                  <circle cx="248" cy="82" r="3.4" fill="#ffd166"/>
+                </g>
+
+                <g>
+                  <ellipse cx="240" cy="160" rx="56" ry="40" fill="#7c3aed"/>
+                  <circle cx="240" cy="160" r="18" fill="#4dc9ff"/>
+                  <circle cx="240" cy="160" r="8.5" fill="#0b0713"/>
+                  <circle cx="245" cy="155" r="4" fill="#fff" opacity=".9"/>
+                  <path d="M200 168 Q 208 188 224 192" stroke="#b388ff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                  <path d="M284 168 Q 276 188 260 192" stroke="#b388ff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                </g>
+
+                <path class="tw" transform="translate(388 116) scale(.7)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#4dc9ff"/>
+                <path class="tw" style="animation-delay:1.5s" transform="translate(120 110) scale(.6)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffd166"/>
+                <circle class="tw" style="animation-delay:.8s" cx="300" cy="250" r="2.6" fill="#ffffff"/>
+              </svg>
+            </div>
+            <div class="case__plate">
+              <div class="case__kicker"><span class="case__no">№ 05</span><span class="case__cat">Goggles</span></div>
+              <h3 class="case__name">Lift Line Legend</h3>
+              <p class="case__tag">Fully gemmed goggles with an all-seeing eye. The whole lift line will ask.</p>
+              <div class="case__foot">
+                <span class="case__price">$145</span>
+                <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============ Case 06 · Heart of Gold ============ -->
+          <article class="case case--half" id="case-hg" data-cat="sunglasses" data-reveal>
+            <div class="case__art case__art--12">
+              <svg viewBox="0 0 480 400" role="img" aria-label="Heart of Gold — heart-shaped sunglasses dipped in pink and gold rhinestones">
+                <defs>
+                  <radialGradient id="hg-spot" cx=".5" cy=".34" r=".8">
+                    <stop offset="0" stop-color="#ff6ec7" stop-opacity=".22"/>
+                    <stop offset="1" stop-color="#ff6ec7" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="hg-velvet" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#2c1130"/>
+                    <stop offset="1" stop-color="#0b0713"/>
+                  </linearGradient>
+                  <clipPath id="hg-clip"><path d="M0 0 C -36 -50, -96 -38, -96 6 C -96 48, -56 80, 0 108 C 56 80, 96 48, 96 6 C 96 -38, 36 -50, 0 0 Z"/></clipPath>
+                </defs>
+                <rect width="480" height="400" fill="url(#hg-velvet)"/>
+                <rect width="480" height="400" fill="url(#hg-spot)"/>
+                <ellipse cx="240" cy="334" rx="210" ry="26" fill="#ff6ec7" opacity=".05"/>
+                <rect x="78" y="326" width="324" height="11" rx="5.5" fill="#221741"/>
+                <rect x="78" y="326" width="324" height="2.6" rx="1.3" fill="#ff6ec7" opacity=".3"/>
+                <ellipse cx="240" cy="339" rx="112" ry="9" fill="#05030a" opacity=".7"/>
+
+                <g id="hg-heart" transform="translate(178 300) scale(.62)">
+                  <path d="M0 0 C -36 -50, -96 -38, -96 6 C -96 48, -56 80, 0 108 C 56 80, 96 48, 96 6 C 96 -38, 36 -50, 0 0 Z" fill="#3a1c3f"/>
+                  <g clip-path="url(#hg-clip)">
+                    <circle cx="-40" cy="10" r="10" fill="#9d2a5c"/>
+                    <circle cx="30" cy="0" r="8" fill="#9d2a5c"/>
+                    <circle cx="-8" cy="46" r="9" fill="#9d2a5c"/>
+                    <circle cx="60" cy="34" r="9" fill="#9d2a5c"/>
+                    <circle cx="-70" cy="34" r="8" fill="#9d2a5c"/>
+                    <circle cx="0" cy="84" r="8" fill="#9d2a5c"/>
+                    <circle cx="-16" cy="-16" r="3.4" fill="#fff" opacity=".8"/>
+                  </g>
+                  <path d="M0 0 C -36 -50, -96 -38, -96 6 C -96 48, -56 80, 0 108 C 56 80, 96 48, 96 6 C 96 -38, 36 -50, 0 0 Z" fill="none" stroke="#ff6ec7" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 17"/>
+                  <path d="M0 0 C -36 -50, -96 -38, -96 6 C -96 48, -56 80, 0 108 C 56 80, 96 48, 96 6 C 96 -38, 36 -50, 0 0 Z" fill="none" stroke="#ffd166" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 17" stroke-dashoffset="8.5"/>
+                </g>
+                <use href="#hg-heart" transform="translate(480 0) scale(-1 1)"/>
+                <path d="M240 156 Q 240 176 240 186" fill="none" stroke="#241741" stroke-width="9" stroke-linecap="round"/>
+                <path d="M240 156 Q 240 176 240 186" fill="none" stroke="#ffd166" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 8"/>
+                <path d="M112 216 L66 194" stroke="#241741" stroke-width="9" stroke-linecap="round"/>
+                <path d="M368 216 L414 194" stroke="#241741" stroke-width="9" stroke-linecap="round"/>
+                <path class="tw" transform="translate(392 120) scale(.65)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffd166"/>
+                <path class="tw" style="animation-delay:1.2s" transform="translate(106 112) scale(.5)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ff6ec7"/>
+              </svg>
+            </div>
+            <div class="case__plate">
+              <div class="case__kicker"><span class="case__no">№ 06</span><span class="case__cat">Sunglasses</span></div>
+              <h3 class="case__name">Heart of Gold</h3>
+              <p class="case__tag">Heart-shaped shades dipped in pink and gold. Wear with your heart on your face.</p>
+              <div class="case__foot">
+                <span class="case__price">$88</span>
+                <a class="claim" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Claim it in the DMs →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============ Case 07 · Your Frames (CTA) ============ -->
+          <article class="case case--cta" id="case-custom" data-reveal>
+            <div class="case__art case__art--12">
+              <svg viewBox="0 0 480 400" role="img" aria-label="A ghosted frame outline, waiting for your frames">
+                <defs>
+                  <linearGradient id="ct-velvet" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#1a1130"/>
+                    <stop offset="1" stop-color="#0b0713"/>
+                  </linearGradient>
+                </defs>
+                <rect width="480" height="400" fill="url(#ct-velvet)"/>
+                <ellipse cx="240" cy="334" rx="210" ry="26" fill="#ffd166" opacity=".05"/>
+                <rect x="78" y="326" width="324" height="11" rx="5.5" fill="#221741"/>
+                <ellipse cx="240" cy="339" rx="112" ry="9" fill="#05030a" opacity=".7"/>
+                <g transform="translate(240 215) scale(.72)" stroke="#a78bfa" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" fill="none" opacity=".85">
+                  <path d="M-128 -6 C-92 -28 -24 -24 2 -6 C28 -24 92 -28 128 -6 C148 8 138 44 110 62 C74 82 22 80 -2 62 C-30 80 -74 82 -110 62 C-138 44 -148 8 -128 -6 Z"/>
+                </g>
+                <path class="tw" transform="translate(240 208) scale(1)" d="M0 -10 C2 -4 4 -2 10 0 C4 2 2 4 0 10 C-2 4 -4 2 -10 0 C-4 -2 -2 -4 0 -10 Z" fill="#ffd166"/>
+                <circle class="tw" style="animation-delay:1s" cx="162" cy="180" r="2.4" fill="#ff6ec7"/>
+                <circle class="tw" style="animation-delay:2s" cx="318" cy="196" r="2" fill="#ffffff"/>
+              </svg>
+            </div>
+            <div class="case__plate">
+              <div class="case__kicker"><span class="case__no">№ +07</span><span class="case__cat">Commissions open</span></div>
+              <h3 class="case__name">Your frames — next exhibit</h3>
+              <p class="case__tag">The case is reserved. Send me your favorite pair and we'll design a piece that goes on display… on your face.</p>
+              <div class="case__foot">
+                <span class="case__price">From $60</span>
+                <a class="claim claim--alt" href="#commission">Plan the commission →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Logo banner ================= -->
+    <section class="section section--tight" aria-label="The Sparktacles wordmark">
+      <div class="container">
+        <figure class="poster-banner" data-reveal>
+          <img src="assets/sparktacleslogo.jpg" alt="The Sparktacles wordmark over a wash of bokeh lights" loading="lazy" decoding="async">
+          <figcaption>The wordmark, in its natural habitat — somewhere between a stage light and a love letter.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= Commission ================= -->
+    <section class="section section--alt" id="commission">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal>The commission ritual</p>
+          <h2 class="poster" data-reveal>From your frames to the floor</h2>
+          <p class="lede" data-reveal>Have frames you adore but refuse to blend in? Ship them over. Four steps between here and your unveiling, with a real human at every step.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <span class="step__no">01</span>
+            <h3 class="step__name">The petition</h3>
+            <p>DM <b>@sparktacles</b> with what you're dreaming of — colors, patterns, chaos level. Liza draws it up and quotes it.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__no">02</span>
+            <h3 class="step__name">The dispatch</h3>
+            <p>Box up your frames and ship them in. No frames? No problem — she sources quality pairs to sparkle on.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__no">03</span>
+            <h3 class="step__name">In the workshop</h3>
+            <p>Every stone placed by hand, sealed, double-checked under lights. Usually with a setlist playing.</p>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step__no">04</span>
+            <h3 class="step__name">The unveiling</h3>
+            <p>They arrive in a Sparktacles pouch, one of one, ready for the lot, the slopes, or Tuesday.</p>
+          </li>
+        </ol>
+
+        <!-- DM composer -->
+        <div class="dm-builder" data-reveal>
+          <div class="dm-builder__head">
+            <h3 class="dm-builder__title">Draft the DM, get the sparkle</h3>
+            <p class="dm-builder__sub">Answer like you're texting a friend (because you are). The draft writes itself.</p>
+          </div>
+
+          <div class="dm-builder__body">
+            <fieldset class="dm-group">
+              <legend class="dm-group__label">What's the occasion?</legend>
+              <div class="dm-picks" data-group="occasion">
+                <button class="pick is-selected" type="button" data-value="festival" aria-pressed="true">Festival season</button>
+                <button class="pick" type="button" data-value="wedding" aria-pressed="false">Wedding</button>
+                <button class="pick" type="button" data-value="everyday" aria-pressed="false">Everyday sparkle</button>
+                <button class="pick" type="button" data-value="slopes" aria-pressed="false">Ski day</button>
+                <button class="pick" type="button" data-value="because" aria-pressed="false">Just because</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="dm-group">
+              <legend class="dm-group__label">Where are we starting?</legend>
+              <div class="dm-picks" data-group="origin">
+                <button class="pick is-selected" type="button" data-value="frames" aria-pressed="true">I have frames to send in</button>
+                <button class="pick" type="button" data-value="ready" aria-pressed="false">A ready-made pair has my name on it</button>
+                <button class="pick" type="button" data-value="surprise" aria-pressed="false">Surprise me entirely</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="dm-group">
+              <legend class="dm-group__label">Gem mood</legend>
+              <div class="dm-picks" data-group="mood">
+                <button class="pick is-selected" type="button" data-value="rainbow" aria-pressed="true">Rainbow riot</button>
+                <button class="pick" type="button" data-value="gold" aria-pressed="false">Gold rush</button>
+                <button class="pick" type="button" data-value="pink" aria-pressed="false">Pink parade</button>
+                <button class="pick" type="button" data-value="blue" aria-pressed="false">Midnight blue</button>
+                <button class="pick" type="button" data-value="crystal" aria-pressed="false">Crystal clear</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="dm-group">
+              <legend class="dm-group__label">Budget vibe</legend>
+              <div class="dm-picks" data-group="budget">
+                <button class="pick is-selected" type="button" data-value="chill" aria-pressed="true">Keep it chill (under $90)</button>
+                <button class="pick" type="button" data-value="sweet" aria-pressed="false">The sweet spot ($90–140)</button>
+                <button class="pick" type="button" data-value="allout" aria-pressed="false">Go all out</button>
+              </div>
+            </fieldset>
+
+            <div class="dm-group">
+              <label class="dm-group__label" for="dmStory">Anything else I should know?</label>
+              <textarea class="dm-story" id="dmStory" rows="3" placeholder="e.g. it's for my grandmother's frames, she'd never forgive me if they stayed boring…"></textarea>
+            </div>
+
+            <div class="dm-builder__out" aria-live="polite">
+              <pre class="dm-draft" id="dmDraft"></pre>
+              <div class="dm-builder__actions">
+                <button class="btn btn--primary" id="dmCopy" type="button">Copy the draft</button>
+                <a class="btn btn--ghost" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">Open Instagram</a>
+                <span class="dm-copied" id="dmCopied" hidden>Copied — now paste it into the DMs! ✨</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Sightings ================= -->
+    <section class="section" id="sightings">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal>Field notes</p>
+          <h2 class="poster" data-reveal>Sightings in the wild</h2>
+          <p class="lede" data-reveal>Verified reports from festival lots, ski lifts, wedding dance floors and one very brave corner office. Tag <b>@sparktacles</b> to file your own report.</p>
+        </header>
+
+        <div class="sightings">
+          <blockquote class="sighting" data-reveal>
+            <div class="sighting__header"><span class="sighting__loc">Saratoga, NY · SPAC lot</span><span class="sighting__status">Status: glowing</span></div>
+            <p class="sighting__quote">&ldquo;My Free Range Leopard pair got more attention than the opening act — and the opening act was good.&rdquo;</p>
+            <cite class="sighting__who">— Maya R.</cite>
+          </blockquote>
+          <blockquote class="sighting" data-reveal>
+            <div class="sighting__header"><span class="sighting__loc">Burlington, VT · wedding</span><span class="sighting__status">Status: tearful</span></div>
+            <p class="sighting__quote">&ldquo;Liza turned my grandmother&rsquo;s old frames into treasure. I cried, then I sparkled, then I cried again.&rdquo;</p>
+            <cite class="sighting__who">— Theo D.</cite>
+          </blockquote>
+          <blockquote class="sighting" data-reveal>
+            <div class="sighting__header"><span class="sighting__loc">Denver, CO · lift line</span><span class="sighting__status">Status: blinding</span></div>
+            <p class="sighting__quote">&ldquo;The goggles. THE GOGGLES. The entire lift line asked before the chair even reached the top.&rdquo;</p>
+            <cite class="sighting__who">— Sam K.</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Tour ================= -->
+    <section class="section section--alt" id="tour">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal>The exhibition tour</p>
+          <h2 class="poster" data-reveal>Come try them on in person</h2>
+          <p class="lede" data-reveal>The display case travels. Catch it at PhanArt shows and craft markets — try pieces on, talk gems with Liza, maybe leave a deposit.</p>
+        </header>
+
+        <ul class="tour" data-reveal>
+          <li class="tour__row">
+            <span class="tour__date"><b>Nov 14–16</b> · 2026</span>
+            <span class="tour__event">PhanArt Fall Bazaar</span>
+            <span class="tour__city">Albany, NY</span>
+            <span class="tour__status tour__status--ok">Confirmed</span>
+          </li>
+          <li class="tour__row">
+            <span class="tour__date"><b>Dec 06</b> · 2026</span>
+            <span class="tour__event">Winter Sparkle Market</span>
+            <span class="tour__city">Burlington, VT</span>
+            <span class="tour__status tour__status--ok">Confirmed</span>
+          </li>
+          <li class="tour__row">
+            <span class="tour__date"><b>Dec 20</b> · 2026</span>
+            <span class="tour__event">Holiday Jam Bazaar</span>
+            <span class="tour__city">Brooklyn, NY</span>
+            <span class="tour__status tour__status--ok">Confirmed</span>
+          </li>
+          <li class="tour__row">
+            <span class="tour__date"><b>Feb 12–15</b> · 2027</span>
+            <span class="tour__event">Love Run Craft Fair</span>
+            <span class="tour__city">Philadelphia, PA</span>
+            <span class="tour__status tour__status--ok">Confirmed</span>
+          </li>
+          <li class="tour__row">
+            <span class="tour__date"><b>Mar</b> · 2027</span>
+            <span class="tour__event">PhanArt Riviera Maya</span>
+            <span class="tour__city">Cancún, MX</span>
+            <span class="tour__status tour__status--dm">DM for details</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= The Curator ================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about__copy" data-reveal>
+            <p class="eyebrow">The curator</p>
+            <h2 class="poster">One artist, one table,<br>a lot of tiny stones</h2>
+            <p><b>Liza</b> — known on the lot as <b>@hallyscomet</b> — started bejeweling her own frames for shows and accidentally built an archive. What began as one pair of leopard-print sunnies is now a rotating collection of one-of-one spectacles, shades and goggles.</p>
+            <p>Every stone is set by hand at her workbench, usually with a setlist playing. Catch the booth at a market and she&rsquo;ll talk gems with you for as long as the line allows. She also vends with <a class="inline" href="https://phanart.net" target="_blank" rel="noopener">PhanArt</a> across the lot scene.</p>
+            <div class="about__stats">
+              <div class="stat"><span class="stat__n">120+</span><span class="stat__l">pieces in the wild</span></div>
+              <div class="stat"><span class="stat__n">40+</span><span class="stat__l">markets vended</span></div>
+              <div class="stat"><span class="stat__n">11k+</span><span class="stat__l">stones, by hand</span></div>
+            </div>
+          </div>
+          <div class="about__portrait" data-reveal>
+            <figure class="portrait">
+              <img src="assets/sparktaclesicon.jpg" alt="The Sparktacles icon: a looping white S with golden sparkles on lavender" width="320" height="320" loading="lazy" decoding="async">
+              <figcaption>The artist&rsquo;s mark — a looping S, two sparkles, zero chill.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer__kicker">ready to shine?</p>
+      <p class="footer__word">Sparktacles</p>
+      <p class="footer__line">Let your spectacles <span class="footer__spell">sparkle!</span></p>
+      <a class="btn btn--primary footer__cta" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">DM @sparktacles — every order starts here</a>
+      <p class="footer__fine">&copy; <span id="year">2026</span> Sparktacles &middot; designed &amp; bedazzled by Liza<br>
+      One of one, never reproduced &middot; sparkle responsibly <span class="footer__star">✦</span></p>
+      <a class="footer__top" href="#marquee" aria-label="Back to top">↑ top</a>
+    </div>
+  </footer>
+
+  <!-- Floating DM pill -->
+  <a class="dm-pill" id="dmPill" href="https://ig.me/m/sparktacles" target="_blank" rel="noopener">✦ DM to order</a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

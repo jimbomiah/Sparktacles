@@ -3,263 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sparktacles - Custom embellished eyewear. Let your spectacles sparkle! Pre-made designs and custom mail-in rhinestone work by Liza.">
-  <title>Sparktacles — Let Your Spectacles Sparkle</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="assets/sparktaclesicon.jpg">
+  <title>Sparktacles — Design Directory</title>
+  <meta name="description" content="Browse every Sparktacles website design drafts — Alex, Dawn, Zephyr and more — with live snapshots.">
+  <style>
+    :root {
+      --bg: #0d0618;
+      --bg2: #171030;
+      --card: #191236;
+      --line: rgba(157, 109, 242, .22);
+      --lav: #9d6df2;
+      --pink: #ff4fd8;
+      --gold: #ffd76a;
+      --ink: #f3edff;
+      --muted: #b9aede;
+      --sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(255, 79, 216, .14), transparent 60%),
+        radial-gradient(1000px 700px at 10% 0%, rgba(157, 109, 242, .16), transparent 55%),
+        var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: clamp(1.5rem, 5vw, 4rem) clamp(1rem, 4vw, 3.5rem) 4rem;
+    }
+    header { max-width: 1200px; margin: 0 auto 2.5rem; }
+    .eyebrow {
+      color: var(--gold);
+      font-size: .8rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      margin: .4rem 0 .6rem;
+    }
+    .lede { color: var(--muted); max-width: 60ch; }
+    .grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.6rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(157, 109, 242, .5);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .45);
+    }
+    .shot {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: top center;
+      background: #000;
+      border-bottom: 1px solid var(--line);
+    }
+    .body { padding: 1.1rem 1.2rem 1.2rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+    .name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    .tag { color: var(--muted); font-size: .92rem; flex: 1; }
+    .links { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; }
+    a.btn {
+      display: inline-block;
+      padding: .42rem .9rem;
+      border-radius: 999px;
+      font-size: .85rem;
+      font-weight: 700;
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--lav), var(--pink));
+      color: #fff;
+      transition: filter .2s ease;
+    }
+    a.btn:hover { filter: brightness(1.15); }
+    a.btn--ghost {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--ink);
+    }
+    a.btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
+    footer {
+      max-width: 1200px;
+      margin: 2.5rem auto 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+  </style>
 </head>
 <body>
-
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="logo"><img src="assets/sparktacleslogo.jpg" alt="Sparktacles" class="logo-img"></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header>
+    <p class="eyebrow">Design directory</p>
+    <h1>Sparktacles — Every Design</h1>
+    <p class="lede">Six takes on the Sparktacles website, each built to the same brief: hand-bedazzled eyewear by Liza. Click a snapshot to open the full design.</p>
   </header>
 
-  <main>
+  <main class="grid">
 
-    <section class="hero" id="home">
-      <div class="hero-bg"></div>
-      <div class="hero-content container">
-        <p class="hero-tag">Custom Embellished Eyewear</p>
-        <h1 class="hero-title">Let Your Spectacles<br><span class="hero-sparkle">Sparkle!</span></h1>
-        <p class="hero-sub">Handcrafted rhinestone designs — buy pre-made or mail in your own frames</p>
-        <div class="hero-cta">
-          <a href="#services" class="btn btn-primary">Shop Designs</a>
-          <a href="#contact" class="btn btn-outline">Custom Order</a>
-        </div>
+    <a class="card" href="alex/">
+      <img class="shot" src="snapshots/alex.png" alt="Snapshot of the alex design" loading="lazy">
+      <div class="body">
+        <div class="name">alex</div>
+        <p class="tag">"Backstage pass to sparkle" — a bright, cream-and-gold concert-themed page with a confetti canvas, setlist and tour-date sections.</p>
+        <span class="links"><span class="btn">Open design</span></span>
       </div>
-      <div class="sparkles" aria-hidden="true"></div>
-    </section>
+    </a>
 
-    <section class="about section" id="about">
-      <div class="container">
-        <h2 class="section-title">Meet the Maker</h2>
-        <div class="about-grid">
-          <div class="about-image">
-            <div class="about-placeholder">
-              <img src="assets/sparktacleslogo.jpg" alt="Sparktacles Logo" class="about-logo">
-            </div>
-          </div>
-          <div class="about-text">
-            <h3>Hi I'm Liza</h3>
-            <p>Founder of Sparktacles and creator behind <a href="https://instagram.com/sparktacles" target="_blank" rel="noopener">@sparktacles</a> &amp; <a href="https://instagram.com/hallyscomet" target="_blank" rel="noopener">@hallyscomet</a>. What started as a passion for festival style and self-expression has grown into a custom embellishment business bringing sparkle to everyday eyewear.</p>
-            <p>Each pair is hand-set with precision-placed rhinestones and jewels — from subtle accents to fully encrusted statement pieces. Whether you need a pair for the next festival, concert, or just want your daily frames to shine, I've got you covered.</p>
-            <div class="about-stats">
-              <div class="stat">
-                <span class="stat-number">229+</span>
-                <span class="stat-label">Designs Created</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Years Sparkling</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">∞</span>
-                <span class="stat-label">Good Vibes</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <a class="card" href="dawn/">
+      <img class="shot" src="snapshots/dawn.png" alt="Snapshot of the dawn design" loading="lazy">
+      <div class="body">
+        <div class="name">dawn</div>
+        <p class="tag">"The archive of one-of-one eyewear" — a dark gallery-framed concept positioning every pair as a numbered, retired museum piece.</p>
+        <span class="links"><span class="btn">Open design</span></span>
       </div>
-    </section>
+    </a>
 
-    <section class="gallery section section-dark" id="gallery">
-      <div class="container">
-        <h2 class="section-title">Featured Designs</h2>
-        <p class="section-subtitle">Every pair is one of a kind</p>
-        <div class="gallery-grid">
-
-          <div class="gallery-card">
-            <div class="gallery-img" style="background: linear-gradient(135deg, #4c1d95, #7c3aed);">
-              <span class="gallery-emoji">🦋</span>
-            </div>
-            <div class="gallery-info">
-              <h4>Butterfly Jewels</h4>
-              <p>Oversized cat-eye frames with purple, green, and gold rhinestones</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <div class="gallery-img" style="background: linear-gradient(135deg, #065f46, #059669);">
-              <span class="gallery-emoji">💚</span>
-            </div>
-            <div class="gallery-info">
-              <h4>Emerald Block</h4>
-              <p>Oversized squares fully covered in dense emerald green jewels</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <div class="gallery-img" style="background: linear-gradient(135deg, #1e3a5f, #3b82f6);">
-              <span class="gallery-emoji">💎</span>
-            </div>
-            <div class="gallery-info">
-              <h4>Blue Sapphire</h4>
-              <p>Deep blue frames with thick rhinestone borders and mirrored turquoise lenses</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <div class="gallery-img" style="background: linear-gradient(135deg, #dc2626, #f97316, #eab308);">
-              <span class="gallery-emoji">🌈</span>
-            </div>
-            <div class="gallery-info">
-              <h4>Rainbow Horizon</h4>
-              <p>Horizontal striped rainbow gem patterns across thick frames</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <div class="gallery-img" style="background: linear-gradient(135deg, #b45309, #f59e0b);">
-              <span class="gallery-emoji">✨</span>
-            </div>
-            <div class="gallery-info">
-              <h4>Golden Glow</h4>
-              <p>Round aviator frames lined with bright gold and yellow rhinestones</p>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <div class="gallery-img" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">
-              <span class="gallery-emoji">🧿</span>
-            </div>
-            <div class="gallery-info">
-              <h4>Evil Eye Goggles</h4>
-              <p>Oversized ski goggles fully covered in blue rhinestones with detailed evil eye centerpiece</p>
-            </div>
-          </div>
-
-        </div>
+    <a class="card" href="francesca/">
+      <img class="shot" src="snapshots/francesca.png" alt="Snapshot of the francesca design" loading="lazy">
+      <div class="body">
+        <div class="name">francesca</div>
+        <p class="tag">A full multi-page shop layout with a gallery, custom-order flow and events page built around a deep-purple hero.</p>
+        <span class="links">
+          <span class="btn">Open design</span>
+          <a class="btn btn--ghost" href="francesca/gallery.html">Gallery</a>
+          <a class="btn btn--ghost" href="francesca/custom.html">Custom</a>
+          <a class="btn btn--ghost" href="francesca/events.html">Events</a>
+        </span>
       </div>
-    </section>
+    </a>
 
-    <section class="services section" id="services">
-      <div class="container">
-        <h2 class="section-title">How It Works</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">&#10024;</div>
-            <h3>Shop Pre-Made</h3>
-            <p>Browse our collection of ready-to-ship designs. Each pair is handcrafted and unique &mdash; when they're gone, they're gone.</p>
-            <a href="#contact" class="btn btn-sm">Inquire</a>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">&#128231;</div>
-            <h3>Mail-In Custom</h3>
-            <p>Have your own frames? Ship them to us and we'll transform them with your choice of colors, patterns, and jewel density.</p>
-            <a href="#contact" class="btn btn-sm">Start Custom</a>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">&#127903;</div>
-            <h3>Festival Ready</h3>
-            <p>Need something for an upcoming show or festival? We specialize in bold, camera-ready designs that shine under stage lights.</p>
-            <a href="#contact" class="btn btn-sm">Get Festival Fit</a>
-          </div>
-        </div>
+    <a class="card" href="gordon/">
+      <img class="shot" src="snapshots/gordon.png" alt="Snapshot of the gordon design" loading="lazy">
+      <div class="body">
+        <div class="name">gordon</div>
+        <p class="tag">"Let your spectacles sparkle!" — a single-file, zero-framework build with live canvas sparkles, film grain and a neon-bokeh dark stage.</p>
+        <span class="links"><span class="btn">Open design</span></span>
       </div>
-    </section>
+    </a>
 
-    <section class="events section section-dark" id="events">
-      <div class="container">
-        <h2 class="section-title">Find Us In Person</h2>
-        <p class="section-subtitle">Catch Sparktacles at these upcoming vendor events</p>
-        <div class="events-grid">
-          <div class="event-card">
-            <div class="event-date">
-              <span class="event-month">JUN</span>
-              <span class="event-day">21</span>
-            </div>
-            <div class="event-details">
-              <h4>PhanArt Exhibition</h4>
-              <p class="event-time">Saturday, 1:00 PM &ndash; 6:00 PM</p>
-              <p class="event-location">DoubleTree by Hilton — Manchester, NH</p>
-            </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
-              <span class="event-month">TBA</span>
-              <span class="event-day">&#9733;</span>
-            </div>
-            <div class="event-details">
-              <h4>PhanArt NYC</h4>
-              <p class="event-location">Hill Country Barbecue — West 26th Street, NYC</p>
-              <p class="event-note">Date TBA &mdash; follow <a href="https://instagram.com/sparktacles" target="_blank" rel="noopener">@sparktacles</a> for updates</p>
-            </div>
-          </div>
-        </div>
+    <a class="card" href="original/">
+      <img class="shot" src="snapshots/original.png" alt="Snapshot of the original design" loading="lazy">
+      <div class="body">
+        <div class="name">original</div>
+        <p class="tag">The original Sparktacles site standing in front of the others — classic sections for home, about, gallery, services, events and contact.</p>
+        <span class="links"><span class="btn">Open design</span></span>
       </div>
-    </section>
+    </a>
 
-    <section class="cta-section section" id="contact">
-      <div class="container">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="section-subtitle">Ready to sparkle? DM us on Instagram or drop a message below.</p>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <a href="https://instagram.com/sparktacles" target="_blank" rel="noopener" class="contact-link">
-              <span class="contact-icon">&#128247;</span>
-              <span>@sparktacles</span>
-            </a>
-            <a href="https://instagram.com/hallyscomet" target="_blank" rel="noopener" class="contact-link">
-              <span class="contact-icon">&#128150;</span>
-              <span>@hallyscomet</span>
-            </a>
-            <div class="contact-motto">
-              <p>Let your spectacles <span class="tagline-script">sparkle!</span> &#10024;</p>
-            </div>
-          </div>
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Tell us what you're looking for</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-            <p class="form-note" id="formNote"></p>
-          </form>
-        </div>
+    <a class="card" href="zephyr/">
+      <img class="shot" src="snapshots/zephyr.png" alt="Snapshot of the zephyr design" loading="lazy">
+      <div class="body">
+        <div class="name">zephyr</div>
+        <p class="tag">A polished dark concept with a preloader, custom cursor, magnetic buttons and a wall-of-fame gallery for festival-ready pairs.</p>
+        <span class="links"><span class="btn">Open design</span></span>
       </div>
-    </section>
+    </a>
 
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <a href="#" class="footer-logo"><img src="assets/sparktacleslogo.jpg" alt="Sparktacles" class="logo-img"></a>
-        <p class="footer-tagline">Let your spectacles <span class="tagline-script">sparkle!</span> &#10024;</p>
-        <div class="footer-social">
-          <a href="https://instagram.com/sparktacles" target="_blank" rel="noopener" aria-label="Instagram">&#128247;</a>
-        </div>
-        <p class="footer-copy">&copy; 2026 Sparktacles. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
+  <footer>Snapshots captured at 1440&times;900 from each design&rsquo;s homepage. &copy; Sparktacles.</footer>
 </body>
 </html>
